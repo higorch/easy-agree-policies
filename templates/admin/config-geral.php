@@ -10,17 +10,17 @@
 
             <tr valign="top">
                 <th scope="row"><?php _e('Texto no botão', 'easylgpd'); ?></th>
-                <td><input type="text" name="btn_text" class="regular-text" value="<?php echo esc_attr(get_option('btn_text')); ?>" /></td>
+                <td><input type="text" name="easylgpd_btn_text" class="regular-text" value="<?php echo esc_attr(get_option('easylgpd_btn_text')); ?>" /></td>
             </tr>
 
             <tr valign="top">
                 <th scope="row"><?php _e('Título do modal', 'easylgpd'); ?></th>
-                <td><input type="text" name="modal_title" class="regular-text" value="<?php echo esc_attr(get_option('modal_title')); ?>" /></td>
+                <td><input type="text" name="easylgpd_modal_title" class="regular-text" value="<?php echo esc_attr(get_option('easylgpd_modal_title')); ?>" /></td>
             </tr>
 
             <tr valign="top">
                 <th scope="row"><?php _e('Descrição', 'easylgpd'); ?></th>
-                <td><textarea name="modal_info" class="regular-text"><?php echo esc_attr(get_option('modal_info')); ?></textarea></td>
+                <td><textarea name="easylgpd_modal_info" class="regular-text"><?php echo esc_attr(get_option('easylgpd_modal_info')); ?></textarea></td>
             </tr>
 
         </table>

@@ -34,16 +34,18 @@
     -webkit-box-sizing: border-box;
 }
 .modal-accept .body .box .col.info {
-    width: calc(100% - 120px);
+    width: calc(100% - 150px);
     color: rgba(255, 255, 255, .85);
 }
 .modal-accept .body .box .col.info a {
     color: rgba(233, 149, 40, .9);
 }
-.modal-accept .body .box .col.info strong,
+.modal-accept .body .box .col.info strong {
+    font-size: 1rem;
+}
 .modal-accept .body .box .col.info p,
 .modal-accept .body .box .col.info a {
-    font-size: 1rem;
+    font-size: .95rem;
 }
 .modal-accept .body .box .col.info strong {
     margin: 0;
@@ -54,7 +56,7 @@
     margin: 10px 0 0 0;
 }
 .modal-accept .body .box .col.btn {
-    width: 120px;
+    width: 150px;
 }
 .modal-accept .body .box .col.btn button {
     appearance: unset;

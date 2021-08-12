@@ -25,9 +25,9 @@ class Easylgpd_Admin
 
     public function register_settings()
     {
-        register_setting('easylgpd-settings-group', 'modal_title');
-        register_setting('easylgpd-settings-group', 'btn_text');
-        register_setting('easylgpd-settings-group', 'modal_info');
+        register_setting('easylgpd-settings-group', 'easylgpd_modal_title');
+        register_setting('easylgpd-settings-group', 'easylgpd_btn_text');
+        register_setting('easylgpd-settings-group', 'easylgpd_modal_info');
     }
 }
 
