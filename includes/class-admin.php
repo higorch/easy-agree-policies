@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
-class Easylgpd_Setup
+class Easylgpd_Admin
 {
     public function __construct()
     {
@@ -19,8 +19,8 @@ class Easylgpd_Setup
 
     public function configs()
     {
-        if (is_file(EASY_LGPD_PATH . 'templates/config-geral.php'))
-            require_once EASY_LGPD_PATH . 'templates/config-geral.php';
+        if (is_file(EASY_LGPD_PATH . 'templates/admin/config-geral.php'))
+            require_once EASY_LGPD_PATH . 'templates/admin/config-geral.php';
     }
 
     public function register_settings()
@@ -31,4 +31,4 @@ class Easylgpd_Setup
     }
 }
 
-new Easylgpd_Setup();
+new Easylgpd_Admin();
