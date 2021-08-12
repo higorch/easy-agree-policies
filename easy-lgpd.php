@@ -23,3 +23,4 @@ define('EASY_LGPD_URL', plugin_dir_url(__FILE__));
 define('EASY_LGPD_PATH', plugin_dir_path(__FILE__));
 
 require_once EASY_LGPD_PATH . 'includes/helpers.php';
+require_once EASY_LGPD_PATH . 'includes/class-setup.php';
