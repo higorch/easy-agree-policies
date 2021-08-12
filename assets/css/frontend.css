@@ -1,0 +1,74 @@
+.modal-accept {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* modal-accept */
+.modal-accept {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    width: 100%;
+    max-width: 768px;
+    background-color: rgb(48, 48, 48, .9);
+    box-shadow: 0 0 13px rgba(32, 32, 32, 0.9);
+    border-radius: 7px;
+    z-index: 9999;
+
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+}
+.modal-accept .body .box  {
+    display: block;
+    font-size: 0;
+}
+.modal-accept .body .box .col {
+    font-size: initial;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 15px;
+
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.modal-accept .body .box .col.info {
+    width: calc(100% - 120px);
+    color: rgba(255, 255, 255, .85);
+}
+.modal-accept .body .box .col.info a {
+    color: rgba(233, 149, 40, .9);
+}
+.modal-accept .body .box .col.info strong,
+.modal-accept .body .box .col.info p,
+.modal-accept .body .box .col.info a {
+    font-size: 1rem;
+}
+.modal-accept .body .box .col.info strong {
+    margin: 0;
+    letter-spacing: 1px;
+}
+.modal-accept .body .box .col.info p {
+    line-height: 22px;
+    margin: 10px 0 0 0;
+}
+.modal-accept .body .box .col.btn {
+    width: 120px;
+}
+.modal-accept .body .box .col.btn button {
+    appearance: unset;
+    -webkit-appearance: unset;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 7px;
+    background-color: rgba(233, 149, 40, .9);
+    color: rgba(255, 255, 255, .85);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 10px 15px;
+
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
