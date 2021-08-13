@@ -6,16 +6,10 @@ if (!defined('ABSPATH')) {
 
 class Easyap_Admin
 {
-    private $options_geral;
-    private $options_links;
-
     public function __construct()
     {
         add_action('admin_menu', array($this, 'menu_page'));
         add_action('admin_init', array($this, 'register_settings'));
-
-        $this->options_geral = get_option('easyap_geral');
-        $this->options_links = get_option('easyap_links');
     }
 
     public function menu_page()
@@ -76,31 +70,22 @@ class Easyap_Admin
 
     public function modal_confirm_title_callback()
     {
-        printf('<input class="regular-text" type="text" name="easyap_geral[modal_confirm_title]" value="%s">', $this->get_option('options_geral', 'modal_confirm_title'));
+        printf('<input class="regular-text" type="text" name="easyap_geral[modal_confirm_title]" value="%s">', get_option_easyap('easyap_geral', 'modal_confirm_title'));
     }
 
     public function modal_confirm_info_callback()
     {
-        printf('<textarea class="regular-text" name="easyap_geral[modal_confirm_info]">%s</textarea>', $this->get_option('options_geral', 'modal_confirm_info'));
+        printf('<textarea class="regular-text" name="easyap_geral[modal_confirm_info]">%s</textarea>', get_option_easyap('easyap_geral', 'modal_confirm_info'));
     }
 
     public function modal_confirm_btn_label_callback()
     {
-        printf('<input class="regular-text" type="text" name="easyap_geral[modal_confirm_btn_label]" value="%s">', $this->get_option('options_geral', 'modal_confirm_btn_label'));
+        printf('<input class="regular-text" type="text" name="easyap_geral[modal_confirm_btn_label]" value="%s">', get_option_easyap('easyap_geral', 'modal_confirm_btn_label'));
     }
 
     public function modal_cookies_title_callback()
     {
-        printf('<input class="regular-text" type="text" name="easyap_geral[modal_cookies_title]" value="%s">', $this->get_option('options_geral', 'modal_cookies_title'));
-    }
-
-    public function get_option($option, $key, $value = null, $defaul = '')
-    {
-        if ($value) {
-            return isset($this->$option[$key]) && esc_attr($this->$option[$key]) == $value ? esc_attr($this->$option[$key]) : $defaul;
-        }
-
-        return isset($this->$option[$key]) ? esc_attr($this->$option[$key]) : $defaul;
+        printf('<input class="regular-text" type="text" name="easyap_geral[modal_cookies_title]" value="%s">', get_option_easyap('easyap_geral', 'modal_cookies_title'));
     }
 }
 
