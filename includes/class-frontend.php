@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
-class Easylgpd_Frontend
+class Easyap_Frontend
 {
     public function __construct()
     {
@@ -14,18 +14,18 @@ class Easylgpd_Frontend
 
     public function enqueue_scripts()
     {
-        wp_enqueue_style('easy-frontend', EASY_LGPD_URL . '/assets/css/frontend.css', null, '1.0.0');
-        wp_enqueue_script('easy-frontend', EASY_LGPD_URL . '/assets/js/frontend.js', array('jquery'), '1.0.0', true);
+        wp_enqueue_style('easyap-frontend', EASYAP_URL . '/assets/css/frontend.css', null, '1.0.0');
+        wp_enqueue_script('easyap-frontend', EASYAP_URL . '/assets/js/frontend.js', array('jquery'), '1.0.0', true);
     }
 
     public function frontend()
     {
-        if (is_file(EASY_LGPD_PATH . 'templates/frontend/modal-accept.php'))
-            require_once EASY_LGPD_PATH . 'templates/frontend/modal-accept.php';
+        if (is_file(EASYAP_PATH . 'templates/frontend/modal-accept.php'))
+            require_once EASYAP_PATH . 'templates/frontend/modal-accept.php';
 
-        if (is_file(EASY_LGPD_PATH . 'templates/frontend/modal-cookies.php'))
-            require_once EASY_LGPD_PATH . 'templates/frontend/modal-cookies.php';
+        if (is_file(EASYAP_PATH . 'templates/frontend/modal-cookies.php'))
+            require_once EASYAP_PATH . 'templates/frontend/modal-cookies.php';
     }
 }
 
-new Easylgpd_Frontend();
+new Easyap_Frontend();
