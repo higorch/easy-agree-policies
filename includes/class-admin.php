@@ -40,21 +40,21 @@ class Easyap_Admin
 
     public function sanitize($input)
     {
-        $new_input = array();
+        $inputs = array();
 
         if (isset($input['modal_confirm_title']))
-            $new_input['modal_confirm_title'] = sanitize_text_field($input['modal_confirm_title']);
+            $inputs['modal_confirm_title'] = sanitize_text_field($input['modal_confirm_title']);
 
         if (isset($input['modal_confirm_info']))
-            $new_input['modal_confirm_info'] = sanitize_text_field($input['modal_confirm_info']);
+            $inputs['modal_confirm_info'] = sanitize_text_field($input['modal_confirm_info']);
 
         if (isset($input['modal_confirm_btn_label']))
-            $new_input['modal_confirm_btn_label'] = sanitize_text_field($input['modal_confirm_btn_label']);
+            $inputs['modal_confirm_btn_label'] = sanitize_text_field($input['modal_confirm_btn_label']);
 
         if (isset($input['modal_cookies_title']))
-            $new_input['modal_cookies_title'] = sanitize_text_field($input['modal_cookies_title']);
+            $inputs['modal_cookies_title'] = sanitize_text_field($input['modal_cookies_title']);
 
-        return $new_input;
+        return $inputs;
     }
 
     public function print_section_info($args)
