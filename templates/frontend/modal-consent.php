@@ -8,7 +8,8 @@
                 <?php echo wpautop(get_option_easyap('easyap_geral', 'modal_consent_info', null, 'Este site usa cookies para melhorar sua experiência. Ao continuar navegando você concorda com o uso dos cookies, termos e políticas do site.')); ?>
             </div>
             <div class="col btn">
-                <button type="button"><?php echo get_option_easyap('easyap_geral', 'modal_consent_btn_accept_label', null, 'Aceitar'); ?></button>
+                <button type="button" class="options"><?php echo get_option_easyap('easyap_geral', 'modal_consent_btn_options_details_label', null, 'Opções'); ?></button>
+                <button type="button" class="accept"><?php echo get_option_easyap('easyap_geral', 'modal_consent_btn_accept_label', null, 'Aceitar'); ?></button>
             </div>
         </div>
 

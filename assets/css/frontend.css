@@ -5,20 +5,14 @@
 /* modal-accept */
 .modal-accept {
     position: fixed;
-    bottom: 30px;
-    left: 50%;
+    bottom: 15px;
+    left: 15px;
     width: 100%;
-    max-width: 768px;
-    background-color: rgb(48, 48, 48, .9);
-    box-shadow: 0 0 13px rgba(32, 32, 32, 0.9);
-    border-radius: 7px;
+    max-width: 350px;
+    background-color: #13293D;
+    box-shadow: 0 1px 7px rgba(39, 39, 39, 0.9);
+    border-radius: 15px;
     z-index: 9999;
-
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
 }
 .modal-accept .body .box  {
     display: block;
@@ -27,6 +21,8 @@
 .modal-accept .body .box .col {
     font-size: initial;
     display: inline-block;
+    width: 100%;
+    text-align: center;
     vertical-align: middle;
     padding: 15px;
 
@@ -34,29 +30,28 @@
     -webkit-box-sizing: border-box;
 }
 .modal-accept .body .box .col.info {
-    width: calc(100% - 150px);
-    color: rgba(255, 255, 255, .85);
+    color: #E8F1F2;
 }
 .modal-accept .body .box .col.info a {
-    color: rgba(233, 149, 40, .9);
+    color: #1B98E0;
 }
 .modal-accept .body .box .col.info strong {
-    font-size: 1rem;
+    font-size: .85rem;
 }
 .modal-accept .body .box .col.info p,
 .modal-accept .body .box .col.info a {
-    font-size: .95rem;
+    font-size: .8rem;
 }
 .modal-accept .body .box .col.info strong {
     margin: 0;
     letter-spacing: 1px;
 }
 .modal-accept .body .box .col.info p {
-    line-height: 22px;
+    line-height: 20px;
     margin: 10px 0 0 0;
 }
 .modal-accept .body .box .col.btn {
-    width: 150px;
+    padding-top: 0;
 }
 .modal-accept .body .box .col.btn button {
     appearance: unset;
@@ -64,13 +59,23 @@
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 1px;
     border: none;
-    border-radius: 7px;
-    background-color: rgba(233, 149, 40, .9);
-    color: rgba(255, 255, 255, .85);
-    font-size: 1rem;
+    border-radius: 30px;
+    font-size: .7rem;
+    font-weight: bold;
+    text-transform: uppercase;
     cursor: pointer;
-    padding: 10px 15px;
+    padding: 10px 30px;
 
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
+}
+.modal-accept .body .box .col.btn button.options {
+    background-color: #E8F1F2;
+    color: #006494;
+    margin-right: 5px;
+}
+.modal-accept .body .box .col.btn button.accept {
+    background-color: #247BA0;
+    color: #ffffff;
+    margin-left: 5px;
 }

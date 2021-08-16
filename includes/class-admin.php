@@ -49,7 +49,7 @@ class Easyap_Admin
 
         add_settings_section('easyap_setting_geral_modal_options', __('Modal opções', 'easyap'),  array($this, 'print_section_info'),  'easyap-setting-geral');
         add_settings_field('modal_options_title', __('Título', 'easyap'), array($this, 'modal_options_title_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_options');
-        add_settings_field('modal_options_save_preferences_label', __('Label botão "salvar preferências"', 'easyap'), array($this, 'modal_options_save_preferences_label_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_options');
+        add_settings_field('modal_options_save_preferences_label', __('Label botão "salvar"', 'easyap'), array($this, 'modal_options_save_preferences_label_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_options');
 
         // Styles
         register_setting('easyap_styles', 'easyap_styles', array($this, 'sanitize'));
