@@ -11,6 +11,18 @@ class Easyap_Admin
         add_action('admin_menu', array($this, 'menu_page'));
         add_action('admin_init', array($this, 'register_settings'));
         add_action('admin_notices', array($this, 'general_admin_notice'));
+        add_action('admin_enqueue_scripts', array($this, 'enqueue_scripts'));
+    }
+
+    public function enqueue_scripts($page)
+    {
+        if ('toplevel_page_easy-agree-policies' != $page) return;
+
+        wp_enqueue_style('wp-color-picker');
+        wp_enqueue_style('easyap-admin', EASYAP_URL . '/assets/css/admin.css', null, '1.0.0');
+
+        wp_enqueue_script('wp-color-picker-alpha', EASYAP_URL . '/assets/plugins/wp-color-picker-alpha/wp-color-picker-alpha.min.js', array('wp-color-picker'), '1.0.0', true);
+        wp_enqueue_script('easyap-admin', EASYAP_URL . '/assets/js/admin.js', array('jquery'), '1.0.0', true);
     }
 
     public function menu_page()
@@ -26,6 +38,7 @@ class Easyap_Admin
 
     public function register_settings()
     {
+        // Geral
         register_setting('easyap_geral', 'easyap_geral',  array($this, 'sanitize'));
 
         add_settings_section('easyap_setting_geral_modal_consent',  __('Modal consentimento', 'easyap'),  array($this, 'print_section_info'),  'easyap-setting-geral');
@@ -37,7 +50,16 @@ class Easyap_Admin
         add_settings_section('easyap_setting_geral_modal_cookies', __('Modal cookies', 'easyap'),  array($this, 'print_section_info'),  'easyap-setting-geral');
         add_settings_field('modal_cookies_title', __('Título', 'easyap'), array($this, 'modal_cookies_title_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_cookies');
 
-        register_setting('easyap_links', 'easyap_links', array($this, 'sanitize'));
+        // Styles
+        register_setting('easyap_styles', 'easyap_styles', array($this, 'sanitize'));
+        add_settings_section('easyap_setting_styles_modal_consent_colors', __('Cores modal consentimento', 'easyap'),  array($this, 'print_section_info'),  'easyap-setting-styles');
+        add_settings_field('modal_consent_text_color', __('Textos', 'easyap'), array($this, 'modal_consent_text_color_input'), 'easyap-setting-styles', 'easyap_setting_styles_modal_consent_colors');
+        add_settings_field('modal_consent_link_color', __('Links', 'easyap'), array($this, 'modal_consent_links_color_input'), 'easyap-setting-styles', 'easyap_setting_styles_modal_consent_colors');
+        add_settings_field('modal_consent_bg_color', __('Fundo', 'easyap'), array($this, 'modal_consent_bg_color_input'), 'easyap-setting-styles', 'easyap_setting_styles_modal_consent_colors');
+        add_settings_field('modal_consent_btn_aceept_text_color', __('Texto botão "aceito"', 'easyap'), array($this, 'modal_consent_btn_aceept_text_input'), 'easyap-setting-styles', 'easyap_setting_styles_modal_consent_colors');
+        add_settings_field('modal_consent_btn_aceept_bg_color', __('Fundo botão "aceito"', 'easyap'), array($this, 'modal_consent_btn_aceept_bg_input'), 'easyap-setting-styles', 'easyap_setting_styles_modal_consent_colors');
+        add_settings_field('modal_consent_btn_decline_text_color', __('Texto botão "não aceito"', 'easyap'), array($this, 'modal_consent_btn_decline_text_input'), 'easyap-setting-styles', 'easyap_setting_styles_modal_consent_colors');
+        add_settings_field('modal_consent_btn_decline_bg_color', __('Fundo botão "não aceito"', 'easyap'), array($this, 'modal_consent_btn_decline_bg_input'), 'easyap-setting-styles', 'easyap_setting_styles_modal_consent_colors');
     }
 
     public function sanitize($input)
@@ -96,6 +118,41 @@ class Easyap_Admin
     public function modal_cookies_title_input()
     {
         printf('<input class="regular-text" type="text" name="easyap_geral[modal_cookies_title]" value="%s">', get_option_easyap('easyap_geral', 'modal_cookies_title'));
+    }
+
+    public function modal_consent_text_color_input()
+    {
+        printf('<input class="color-picker" data-alpha-enabled="true" type="text" name="easyap_styles[modal_consent_text_color]" value="%s">', get_option_easyap('easyap_styles', 'modal_consent_text_color'));
+    }
+
+    public function modal_consent_links_color_input()
+    {
+        printf('<input class="color-picker" data-alpha-enabled="true" type="text" name="easyap_styles[modal_consent_links_color]" value="%s">', get_option_easyap('easyap_styles', 'modal_consent_links_color'));
+    }
+
+    public function modal_consent_bg_color_input()
+    {
+        printf('<input class="color-picker" data-alpha-enabled="true" type="text" name="easyap_styles[modal_consent_bg_color]" value="%s">', get_option_easyap('easyap_styles', 'modal_consent_bg_color'));
+    }
+
+    public function modal_consent_btn_aceept_text_input()
+    {
+        printf('<input class="color-picker" data-alpha-enabled="true" type="text" name="easyap_styles[modal_consent_btn_aceept_text]" value="%s">', get_option_easyap('easyap_styles', 'modal_consent_btn_aceept_text'));
+    }
+
+    public function modal_consent_btn_aceept_bg_input()
+    {
+        printf('<input class="color-picker" data-alpha-enabled="true" type="text" name="easyap_styles[modal_consent_btn_aceept_bg]" value="%s">', get_option_easyap('easyap_styles', 'modal_consent_btn_aceept_bg'));
+    }
+
+    public function modal_consent_btn_decline_text_input()
+    {
+        printf('<input class="color-picker" data-alpha-enabled="true" type="text" name="easyap_styles[modal_consent_btn_decline_text]" value="%s">', get_option_easyap('easyap_styles', 'modal_consent_btn_decline_text'));
+    }
+
+    public function modal_consent_btn_decline_bg_input()
+    {
+        printf('<input class="color-picker" data-alpha-enabled="true" type="text" name="easyap_styles[modal_consent_btn_decline_bg]" value="%s">', get_option_easyap('easyap_styles', 'modal_consent_btn_decline_bg'));
     }
 
     public function general_admin_notice()
