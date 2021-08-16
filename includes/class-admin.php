@@ -27,10 +27,10 @@ class Easyap_Admin
     {
         register_setting('easyap_geral', 'easyap_geral',  array($this, 'sanitize'));
 
-        add_settings_section('easyap_setting_geral_modal_confirm',  'Modal confirmação',  array($this, 'print_section_info'),  'easyap-setting-geral');
-        add_settings_field('modal_confirm_title', 'Título', array($this, 'modal_confirm_title_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_confirm');
-        add_settings_field('modal_confirm_info', 'Informações', array($this, 'modal_confirm_info_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_confirm');
-        add_settings_field('modal_confirm_btn_label', 'Texto do botão', array($this, 'modal_confirm_btn_label_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_confirm');
+        add_settings_section('easyap_setting_geral_modal_consent',  'Modal consentimento',  array($this, 'print_section_info'),  'easyap-setting-geral');
+        add_settings_field('modal_consent_title', 'Título', array($this, 'modal_consent_title_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_consent');
+        add_settings_field('modal_consent_info', 'Informações', array($this, 'modal_consent_info_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_consent');
+        add_settings_field('modal_consent_btn_accept_label', 'Texto do botão', array($this, 'modal_consent_btn_accept_label_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_consent');
 
         add_settings_section('easyap_setting_geral_modal_cookies',  'Modal cookies',  array($this, 'print_section_info'),  'easyap-setting-geral');
         add_settings_field('modal_cookies_title', 'Título', array($this, 'modal_cookies_title_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_cookies');
@@ -42,14 +42,14 @@ class Easyap_Admin
     {
         $inputs = array();
 
-        if (isset($input['modal_confirm_title']))
-            $inputs['modal_confirm_title'] = sanitize_text_field($input['modal_confirm_title']);
+        if (isset($input['modal_consent_title']))
+            $inputs['modal_consent_title'] = sanitize_text_field($input['modal_consent_title']);
 
-        if (isset($input['modal_confirm_info']))
-            $inputs['modal_confirm_info'] = sanitize_text_field($input['modal_confirm_info']);
+        if (isset($input['modal_consent_info']))
+            $inputs['modal_consent_info'] = sanitize_text_field($input['modal_consent_info']);
 
-        if (isset($input['modal_confirm_btn_label']))
-            $inputs['modal_confirm_btn_label'] = sanitize_text_field($input['modal_confirm_btn_label']);
+        if (isset($input['modal_consent_btn_accept_label']))
+            $inputs['modal_consent_btn_accept_label'] = sanitize_text_field($input['modal_consent_btn_accept_label']);
 
         if (isset($input['modal_cookies_title']))
             $inputs['modal_cookies_title'] = sanitize_text_field($input['modal_cookies_title']);
@@ -59,8 +59,8 @@ class Easyap_Admin
 
     public function print_section_info($args)
     {
-        if (esc_html($args['id']) == 'easyap_setting_geral_modal_confirm') {
-            printf('<p class="description">%s</p>', __('Configurações para o modal de confirmação', 'easyap'));
+        if (esc_html($args['id']) == 'easyap_setting_geral_modal_consent') {
+            printf('<p class="description">%s</p>', __('Configurações para o modal de consentimento', 'easyap'));
         }
 
         if (esc_html($args['id']) == 'easyap_setting_geral_modal_cookies') {
@@ -68,19 +68,19 @@ class Easyap_Admin
         }
     }
 
-    public function modal_confirm_title_input()
+    public function modal_consent_title_input()
     {
-        printf('<input class="regular-text" type="text" name="easyap_geral[modal_confirm_title]" value="%s">', get_option_easyap('easyap_geral', 'modal_confirm_title'));
+        printf('<input class="regular-text" type="text" name="easyap_geral[modal_consent_title]" value="%s">', get_option_easyap('easyap_geral', 'modal_consent_title'));
     }
 
-    public function modal_confirm_info_input()
+    public function modal_consent_info_input()
     {
-        printf('<textarea class="regular-text" name="easyap_geral[modal_confirm_info]">%s</textarea>', get_option_easyap('easyap_geral', 'modal_confirm_info'));
+        printf('<textarea class="regular-text" name="easyap_geral[modal_consent_info]">%s</textarea>', get_option_easyap('easyap_geral', 'modal_consent_info'));
     }
 
-    public function modal_confirm_btn_label_input()
+    public function modal_consent_btn_accept_label_input()
     {
-        printf('<input class="regular-text" type="text" name="easyap_geral[modal_confirm_btn_label]" value="%s">', get_option_easyap('easyap_geral', 'modal_confirm_btn_label'));
+        printf('<input class="regular-text" type="text" name="easyap_geral[modal_consent_btn_accept_label]" value="%s">', get_option_easyap('easyap_geral', 'modal_consent_btn_accept_label'));
     }
 
     public function modal_cookies_title_input()

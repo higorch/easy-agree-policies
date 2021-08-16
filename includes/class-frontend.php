@@ -20,8 +20,8 @@ class Easyap_Frontend
 
     public function frontend()
     {
-        if (is_file(EASYAP_PATH . 'templates/frontend/modal-accept.php'))
-            require_once EASYAP_PATH . 'templates/frontend/modal-accept.php';
+        if (is_file(EASYAP_PATH . 'templates/frontend/modal-consent.php'))
+            require_once EASYAP_PATH . 'templates/frontend/modal-consent.php';
 
         if (is_file(EASYAP_PATH . 'templates/frontend/modal-cookies.php'))
             require_once EASYAP_PATH . 'templates/frontend/modal-cookies.php';
