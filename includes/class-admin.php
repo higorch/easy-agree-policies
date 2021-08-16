@@ -45,10 +45,11 @@ class Easyap_Admin
         add_settings_field('modal_consent_title', __('Título', 'easyap'), array($this, 'modal_consent_title_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_consent');
         add_settings_field('modal_consent_info', __('Informações', 'easyap'), array($this, 'modal_consent_info_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_consent');
         add_settings_field('modal_consent_btn_accept_label', __('Label botão "aceito"', 'easyap'), array($this, 'modal_consent_btn_accept_label_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_consent');
-        add_settings_field('modal_consent_btn_decline_label', __('Label botão "não aceito"', 'easyap'), array($this, 'modal_consent_btn_decline_label_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_consent');
+        add_settings_field('modal_consent_btn_options_details_label', __('Label botão "opções"', 'easyap'), array($this, 'modal_consent_btn_options_details_label_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_consent');
 
-        add_settings_section('easyap_setting_geral_modal_cookies', __('Modal cookies', 'easyap'),  array($this, 'print_section_info'),  'easyap-setting-geral');
-        add_settings_field('modal_cookies_title', __('Título', 'easyap'), array($this, 'modal_cookies_title_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_cookies');
+        add_settings_section('easyap_setting_geral_modal_options', __('Modal opções', 'easyap'),  array($this, 'print_section_info'),  'easyap-setting-geral');
+        add_settings_field('modal_options_title', __('Título', 'easyap'), array($this, 'modal_options_title_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_options');
+        add_settings_field('modal_options_save_preferences_label', __('Label botão "salvar preferências"', 'easyap'), array($this, 'modal_options_save_preferences_label_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_options');
 
         // Styles
         register_setting('easyap_styles', 'easyap_styles', array($this, 'sanitize'));
@@ -58,8 +59,8 @@ class Easyap_Admin
         add_settings_field('modal_consent_bg_color', __('Fundo', 'easyap'), array($this, 'modal_consent_bg_color_input'), 'easyap-setting-styles', 'easyap_setting_styles_modal_consent_colors');
         add_settings_field('modal_consent_btn_aceept_text_color', __('Texto botão "aceito"', 'easyap'), array($this, 'modal_consent_btn_aceept_text_input'), 'easyap-setting-styles', 'easyap_setting_styles_modal_consent_colors');
         add_settings_field('modal_consent_btn_aceept_bg_color', __('Fundo botão "aceito"', 'easyap'), array($this, 'modal_consent_btn_aceept_bg_input'), 'easyap-setting-styles', 'easyap_setting_styles_modal_consent_colors');
-        add_settings_field('modal_consent_btn_decline_text_color', __('Texto botão "não aceito"', 'easyap'), array($this, 'modal_consent_btn_decline_text_input'), 'easyap-setting-styles', 'easyap_setting_styles_modal_consent_colors');
-        add_settings_field('modal_consent_btn_decline_bg_color', __('Fundo botão "não aceito"', 'easyap'), array($this, 'modal_consent_btn_decline_bg_input'), 'easyap-setting-styles', 'easyap_setting_styles_modal_consent_colors');
+        add_settings_field('modal_consent_btn_options_details_text_color', __('Texto botão "opções"', 'easyap'), array($this, 'modal_consent_btn_options_details_text_input'), 'easyap-setting-styles', 'easyap_setting_styles_modal_consent_colors');
+        add_settings_field('modal_consent_btn_options_details_bg_color', __('Fundo botão "opções"', 'easyap'), array($this, 'modal_consent_btn_options_details_bg_input'), 'easyap-setting-styles', 'easyap_setting_styles_modal_consent_colors');
     }
 
     public function sanitize($input)
@@ -75,11 +76,14 @@ class Easyap_Admin
         if (isset($input['modal_consent_btn_accept_label']))
             $inputs['modal_consent_btn_accept_label'] = sanitize_text_field($input['modal_consent_btn_accept_label']);
 
-        if (isset($input['modal_consent_btn_decline_label']))
-            $inputs['modal_consent_btn_decline_label'] = sanitize_text_field($input['modal_consent_btn_decline_label']);
+        if (isset($input['modal_consent_btn_options_details_label']))
+            $inputs['modal_consent_btn_options_details_label'] = sanitize_text_field($input['modal_consent_btn_options_details_label']);
 
-        if (isset($input['modal_cookies_title']))
-            $inputs['modal_cookies_title'] = sanitize_text_field($input['modal_cookies_title']);
+        if (isset($input['modal_options_title']))
+            $inputs['modal_options_title'] = sanitize_text_field($input['modal_options_title']);
+
+        if (isset($input['modal_options_save_preferences_label']))
+            $inputs['modal_options_save_preferences_label'] = sanitize_text_field($input['modal_options_save_preferences_label']);
 
         return $inputs;
     }
@@ -90,8 +94,8 @@ class Easyap_Admin
             printf('<p class="description">%s</p>', __('Configurações para o modal de consentimento', 'easyap'));
         }
 
-        if (esc_html($args['id']) == 'easyap_setting_geral_modal_cookies') {
-            printf('<p class="description">%s</p>',  __('Configurações para o modal de cookies', 'easyap'));
+        if (esc_html($args['id']) == 'easyap_setting_geral_modal_options') {
+            printf('<p class="description">%s</p>',  __('Configurações para o modal de opções', 'easyap'));
         }
     }
 
@@ -110,14 +114,19 @@ class Easyap_Admin
         printf('<input class="regular-text" type="text" name="easyap_geral[modal_consent_btn_accept_label]" value="%s">', get_option_easyap('easyap_geral', 'modal_consent_btn_accept_label'));
     }
 
-    public function modal_consent_btn_decline_label_input()
+    public function modal_consent_btn_options_details_label_input()
     {
-        printf('<input class="regular-text" type="text" name="easyap_geral[modal_consent_btn_decline_label]" value="%s">', get_option_easyap('easyap_geral', 'modal_consent_btn_decline_label'));
+        printf('<input class="regular-text" type="text" name="easyap_geral[modal_consent_btn_options_details_label]" value="%s">', get_option_easyap('easyap_geral', 'modal_consent_btn_options_details_label'));
     }
 
-    public function modal_cookies_title_input()
+    public function modal_options_title_input()
     {
-        printf('<input class="regular-text" type="text" name="easyap_geral[modal_cookies_title]" value="%s">', get_option_easyap('easyap_geral', 'modal_cookies_title'));
+        printf('<input class="regular-text" type="text" name="easyap_geral[modal_options_title]" value="%s">', get_option_easyap('easyap_geral', 'modal_options_title'));
+    }
+
+    public function modal_options_save_preferences_label_input()
+    {
+        printf('<input class="regular-text" type="text" name="easyap_geral[modal_options_save_preferences_label]" value="%s">', get_option_easyap('easyap_geral', 'modal_options_save_preferences_label'));
     }
 
     public function modal_consent_text_color_input()
@@ -145,14 +154,14 @@ class Easyap_Admin
         printf('<input class="color-picker" data-alpha-enabled="true" type="text" name="easyap_styles[modal_consent_btn_aceept_bg]" value="%s">', get_option_easyap('easyap_styles', 'modal_consent_btn_aceept_bg'));
     }
 
-    public function modal_consent_btn_decline_text_input()
+    public function modal_consent_btn_options_details_text_input()
     {
-        printf('<input class="color-picker" data-alpha-enabled="true" type="text" name="easyap_styles[modal_consent_btn_decline_text]" value="%s">', get_option_easyap('easyap_styles', 'modal_consent_btn_decline_text'));
+        printf('<input class="color-picker" data-alpha-enabled="true" type="text" name="easyap_styles[modal_consent_btn_options_details_text]" value="%s">', get_option_easyap('easyap_styles', 'modal_consent_btn_options_details_text'));
     }
 
-    public function modal_consent_btn_decline_bg_input()
+    public function modal_consent_btn_options_details_bg_input()
     {
-        printf('<input class="color-picker" data-alpha-enabled="true" type="text" name="easyap_styles[modal_consent_btn_decline_bg]" value="%s">', get_option_easyap('easyap_styles', 'modal_consent_btn_decline_bg'));
+        printf('<input class="color-picker" data-alpha-enabled="true" type="text" name="easyap_styles[modal_consent_btn_options_details_bg]" value="%s">', get_option_easyap('easyap_styles', 'modal_consent_btn_options_details_bg'));
     }
 
     public function general_admin_notice()
