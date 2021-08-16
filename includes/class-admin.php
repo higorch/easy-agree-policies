@@ -28,12 +28,12 @@ class Easyap_Admin
         register_setting('easyap_geral', 'easyap_geral',  array($this, 'sanitize'));
 
         add_settings_section('easyap_setting_geral_modal_confirm',  'Modal confirmação',  array($this, 'print_section_info'),  'easyap-setting-geral');
-        add_settings_field('modal_confirm_title', 'Título', array($this, 'modal_confirm_title_callback'), 'easyap-setting-geral', 'easyap_setting_geral_modal_confirm');
-        add_settings_field('modal_confirm_info', 'Informações', array($this, 'modal_confirm_info_callback'), 'easyap-setting-geral', 'easyap_setting_geral_modal_confirm');
-        add_settings_field('modal_confirm_btn_label', 'Texto do botão', array($this, 'modal_confirm_btn_label_callback'), 'easyap-setting-geral', 'easyap_setting_geral_modal_confirm');
+        add_settings_field('modal_confirm_title', 'Título', array($this, 'modal_confirm_title_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_confirm');
+        add_settings_field('modal_confirm_info', 'Informações', array($this, 'modal_confirm_info_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_confirm');
+        add_settings_field('modal_confirm_btn_label', 'Texto do botão', array($this, 'modal_confirm_btn_label_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_confirm');
 
         add_settings_section('easyap_setting_geral_modal_cookies',  'Modal cookies',  array($this, 'print_section_info'),  'easyap-setting-geral');
-        add_settings_field('modal_cookies_title', 'Título', array($this, 'modal_cookies_title_callback'), 'easyap-setting-geral', 'easyap_setting_geral_modal_cookies');
+        add_settings_field('modal_cookies_title', 'Título', array($this, 'modal_cookies_title_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_cookies');
 
         register_setting('easyap_links', 'easyap_links',  array($this, 'sanitize'));
     }
@@ -68,22 +68,22 @@ class Easyap_Admin
         }
     }
 
-    public function modal_confirm_title_callback()
+    public function modal_confirm_title_input()
     {
         printf('<input class="regular-text" type="text" name="easyap_geral[modal_confirm_title]" value="%s">', get_option_easyap('easyap_geral', 'modal_confirm_title'));
     }
 
-    public function modal_confirm_info_callback()
+    public function modal_confirm_info_input()
     {
         printf('<textarea class="regular-text" name="easyap_geral[modal_confirm_info]">%s</textarea>', get_option_easyap('easyap_geral', 'modal_confirm_info'));
     }
 
-    public function modal_confirm_btn_label_callback()
+    public function modal_confirm_btn_label_input()
     {
         printf('<input class="regular-text" type="text" name="easyap_geral[modal_confirm_btn_label]" value="%s">', get_option_easyap('easyap_geral', 'modal_confirm_btn_label'));
     }
 
-    public function modal_cookies_title_callback()
+    public function modal_cookies_title_input()
     {
         printf('<input class="regular-text" type="text" name="easyap_geral[modal_cookies_title]" value="%s">', get_option_easyap('easyap_geral', 'modal_cookies_title'));
     }
