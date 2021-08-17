@@ -190,7 +190,7 @@ class Easyap_Admin
 
     public function modal_consent_btn_options_details_text_color()
     {
-        $color = 'rgb(0, 100, 148)';
+        $color = 'rgb(36, 123, 160)';
         printf('<input class="color-picker" data-alpha-enabled="true" type="text" name="easyap_styles[modal_consent_btn_options_details_text_color]" value="%s">', get_option_easyap('easyap_styles', 'modal_consent_btn_options_details_text_color', null, $color));
     }
 

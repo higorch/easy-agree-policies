@@ -16,3 +16,23 @@
     </div>
 
 </div>
+
+<style>
+    .modal-accept {
+        background-color: <?php echo get_option_easyap('easyap_styles', 'modal_consent_bg_color', null, 'rgb(19, 41, 61)'); ?>;
+    }
+    .modal-accept .body .box .col.info {
+        color: <?php echo get_option_easyap('easyap_styles', 'modal_consent_bg_color', null, 'rgb(232, 241, 242)'); ?>;
+    }
+    .modal-accept .body .box .col.info a {
+        color: <?php echo get_option_easyap('easyap_styles', 'modal_consent_bg_color', null, 'rgb(27, 152, 224)'); ?>;
+    }
+    .modal-accept .body .box .col.btn button.options {
+        background-color: <?php echo get_option_easyap('easyap_styles', 'modal_consent_bg_color', null, 'rgb(232, 241, 242)'); ?>;
+        color: <?php echo get_option_easyap('easyap_styles', 'modal_consent_bg_color', null, 'rgb(36, 123, 160)'); ?>;
+    }
+    .modal-accept .body .box .col.btn button.accept {
+        background-color: <?php echo get_option_easyap('easyap_styles', 'modal_consent_bg_color', null, 'rgb(36, 123, 160)'); ?>;
+        color: <?php echo get_option_easyap('easyap_styles', 'modal_consent_bg_color', null, 'rgb(232, 241, 242)'); ?>;
+    }
+</style>

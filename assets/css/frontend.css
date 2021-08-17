@@ -9,7 +9,6 @@
     left: 15px;
     width: 100%;
     max-width: 350px;
-    background-color: rgb(19, 41, 61);
     box-shadow: 0 1px 7px rgba(39, 39, 39, 0.9);
     border-radius: 15px;
     z-index: 9999;
@@ -28,12 +27,6 @@
 
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
-}
-.modal-accept .body .box .col.info {
-    color: rgb(232, 241, 242);
-}
-.modal-accept .body .box .col.info a {
-    color: rgb(27, 152, 224);
 }
 .modal-accept .body .box .col.info strong {
     font-size: .85rem;
@@ -70,12 +63,8 @@
     -webkit-box-sizing: border-box;
 }
 .modal-accept .body .box .col.btn button.options {
-    background-color: rgb(232, 241, 242);
-    color: rgb(0, 100, 148);
     margin-right: 5px;
 }
 .modal-accept .body .box .col.btn button.accept {
-    background-color: rgb(36, 123, 160);
-    color: rgb(232, 241, 242);
     margin-left: 5px;
 }

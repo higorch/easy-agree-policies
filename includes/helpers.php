@@ -11,9 +11,9 @@ if (!function_exists('get_option_easyap')) {
         $opt = get_option($option);
 
         if ($value) {
-            return isset($opt[$key]) && esc_attr($opt[$key]) == $value ? esc_attr($opt[$key]) : $defaul;
+            return isset($opt[$key]) && !empty($opt[$key]) && esc_attr($opt[$key]) == $value ? esc_attr($opt[$key]) : $defaul;
         }
 
-        return isset($opt[$key]) ? esc_attr($opt[$key]) : $defaul;
+        return isset($opt[$key]) && !empty($opt[$key]) ? esc_attr($opt[$key]) : $defaul;
     }
 }
