@@ -42,13 +42,14 @@ class Easyap_Admin
         register_setting('easyap_geral', 'easyap_geral',  array($this, 'easyap_geral_sanitize'));
 
         add_settings_section('easyap_setting_geral_modal_consent',  __('Modal consentimento', 'easyap'),  array($this, 'print_section_info'),  'easyap-setting-geral');
-        add_settings_field('modal_consent_title', __('Título', 'easyap'), array($this, 'modal_consent_title_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_consent');
-        add_settings_field('modal_consent_info', __('Informações', 'easyap'), array($this, 'modal_consent_info_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_consent');
-        add_settings_field('modal_consent_btn_accept_label', __('Label botão "aceito"', 'easyap'), array($this, 'modal_consent_btn_accept_label_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_consent');
-        add_settings_field('modal_consent_btn_options_details_label', __('Label botão "opções"', 'easyap'), array($this, 'modal_consent_btn_options_details_label_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_consent');
+        add_settings_field('modal_consent_title', __('Título', 'easyap'), array($this, 'modal_consent_title'), 'easyap-setting-geral', 'easyap_setting_geral_modal_consent');
+        add_settings_field('modal_consent_info', __('Informações', 'easyap'), array($this, 'modal_consent_info'), 'easyap-setting-geral', 'easyap_setting_geral_modal_consent');
+        add_settings_field('modal_consent_btn_accept_label', __('Label botão "aceito"', 'easyap'), array($this, 'modal_consent_btn_accept_label'), 'easyap-setting-geral', 'easyap_setting_geral_modal_consent');
+        add_settings_field('modal_consent_btn_options_details_label', __('Label botão "opções"', 'easyap'), array($this, 'modal_consent_btn_options_details_label'), 'easyap-setting-geral', 'easyap_setting_geral_modal_consent');
+
         add_settings_section('easyap_setting_geral_modal_options', __('Modal opções', 'easyap'),  array($this, 'print_section_info'),  'easyap-setting-geral');
         add_settings_field('modal_options_title', __('Título', 'easyap'), array($this, 'modal_options_title_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_options');
-        add_settings_field('modal_options_save_preferences_label', __('Label botão "salvar"', 'easyap'), array($this, 'modal_options_save_preferences_label_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_options');
+        add_settings_field('modal_options_save_preferences_label', __('Label botão "salvar"', 'easyap'), array($this, 'modal_options_save_preferences_label'), 'easyap-setting-geral', 'easyap_setting_geral_modal_options');
 
         // Styles
         register_setting('easyap_styles', 'easyap_styles', array($this, 'easyap_styles_sanitize'));
@@ -127,22 +128,22 @@ class Easyap_Admin
         }
     }
 
-    public function modal_consent_title_input()
+    public function modal_consent_title()
     {
         printf('<input class="regular-text" type="text" name="easyap_geral[modal_consent_title]" value="%s">', get_option_easyap('easyap_geral', 'modal_consent_title'));
     }
 
-    public function modal_consent_info_input()
+    public function modal_consent_info()
     {
         printf('<textarea class="regular-text" name="easyap_geral[modal_consent_info]">%s</textarea>', get_option_easyap('easyap_geral', 'modal_consent_info'));
     }
 
-    public function modal_consent_btn_accept_label_input()
+    public function modal_consent_btn_accept_label()
     {
         printf('<input class="regular-text" type="text" name="easyap_geral[modal_consent_btn_accept_label]" value="%s">', get_option_easyap('easyap_geral', 'modal_consent_btn_accept_label'));
     }
 
-    public function modal_consent_btn_options_details_label_input()
+    public function modal_consent_btn_options_details_label()
     {
         printf('<input class="regular-text" type="text" name="easyap_geral[modal_consent_btn_options_details_label]" value="%s">', get_option_easyap('easyap_geral', 'modal_consent_btn_options_details_label'));
     }
@@ -152,7 +153,7 @@ class Easyap_Admin
         printf('<input class="regular-text" type="text" name="easyap_geral[modal_options_title]" value="%s">', get_option_easyap('easyap_geral', 'modal_options_title'));
     }
 
-    public function modal_options_save_preferences_label_input()
+    public function modal_options_save_preferences_label()
     {
         printf('<input class="regular-text" type="text" name="easyap_geral[modal_options_save_preferences_label]" value="%s">', get_option_easyap('easyap_geral', 'modal_options_save_preferences_label'));
     }
