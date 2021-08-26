@@ -3,7 +3,7 @@
 /**
  * Plugin Name:       Easy agree policies
  * Plugin URI:        https://example.com/plugins/the-basics/
- * Description:       Suitability to policies.
+ * Description:       Suitability to policies!
  * Version:           1.0.0
  * Requires at least: 5.2
  * Requires PHP:      7.2
