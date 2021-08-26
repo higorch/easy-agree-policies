@@ -12,6 +12,21 @@ class Easyap_Admin
         add_action('admin_init', array($this, 'register_settings'));
         add_action('admin_notices', array($this, 'general_admin_notice'));
         add_action('admin_enqueue_scripts', array($this, 'enqueue_scripts'));
+
+        add_shortcode('easyp_link', array($this, 'easyp_link_shortcode'));
+    }
+
+    public function easyp_link_shortcode($atts, $content = null)
+    {
+        $a = shortcode_atts(array(
+            'text' => '',
+            'href' => '',
+        ), $atts);
+
+        ob_start();
+
+        echo "<a href='{$a['href']}'>{$a['text']}</a>";
+        return ob_get_clean();
     }
 
     public function enqueue_scripts($page)
