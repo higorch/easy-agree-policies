@@ -1,4 +1,5 @@
-.modal-accept {
+.modal-accept > * {
+    all: initial;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -29,18 +30,18 @@
     -webkit-box-sizing: border-box;
 }
 .modal-accept .body .box .col.info strong {
-    font-size: .85rem;
+    font-size: .85em;
 }
 .modal-accept .body .box .col.info p,
 .modal-accept .body .box .col.info a {
-    font-size: .8rem;
+    font-size: .75em;
 }
 .modal-accept .body .box .col.info strong {
     margin: 0;
     letter-spacing: 1px;
 }
 .modal-accept .body .box .col.info p {
-    line-height: 18px;
+    line-height: 16px;
     margin: 10px 0 0 0;
 }
 .modal-accept .body .box .col.btn {
@@ -53,9 +54,10 @@
     letter-spacing: 1px;
     border: none;
     border-radius: 30px;
-    font-size: .7rem;
+    font-size: .65em;
     font-weight: bold;
     text-transform: uppercase;
+    text-decoration: none;
     cursor: pointer;
     padding: 10px 30px;
 
