@@ -43,6 +43,9 @@
     line-height: 16px;
     margin: 10px 0 0 0;
 }
+.modal-accept .body .box .col.info p a {
+    text-decoration: none;
+}
 .modal-accept .body .box .col.btn {
     padding-top: 0;
 }
