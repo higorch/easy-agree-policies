@@ -21,11 +21,12 @@ class Easyap_Admin
         $a = shortcode_atts(array(
             'text' => '',
             'href' => '',
+            'target' => '',
         ), $atts);
 
         ob_start();
 
-        echo "<a href='{$a['href']}'>{$a['text']}</a>";
+        echo "<a href='{$a['href']}' target='{$a['target']}'>{$a['text']}</a>";
         return ob_get_clean();
     }
 

@@ -28,4 +28,43 @@
 
 </table>
 
-<code>[easyp_link text="políticas e privacidade do site" href="https://google.com"]</code>
+<p>
+    <b style="display: block; font-size: 14px; margin-bottom: 5px;">Copie o shortcode:</b>
+    <code id="shortcode-link"></code>
+</p>
+
+<script>
+    (function($) {
+
+        var text = '',
+            href = '#',
+            target = '_self';
+
+        $('input[name="label"]').on('keyup', function(e) {
+            text = $(this).val();
+            $(document).trigger('hortcode_link_change')
+        });
+
+        $('input[name="link"]').on('keyup', function(e) {
+            href = $(this).val();
+            if (href == '') {
+                href = "#";
+            }
+            $(document).trigger('hortcode_link_change')
+        });
+
+        $('input[name="_blank"]').on('change', function(e) {
+            if ($(this).is(':checked')) {
+                target = '_blank';
+            } else {
+                target = '_self';
+            }
+            $(document).trigger('hortcode_link_change')
+        });
+
+        $(document).on('hortcode_link_change', function() {
+            $("#shortcode-link").text('[easyp_link text="' + text + '" href="' + href + '" target="' + target + '"]');
+        }).trigger('hortcode_link_change');
+
+    })(jQuery)
+</script>
