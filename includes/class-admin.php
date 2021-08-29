@@ -77,6 +77,9 @@ class Easyap_Admin
         add_settings_field('modal_consent_btn_aceept_bg_color', __('Fundo botão "aceito"', 'easyap'), array($this, 'modal_consent_btn_aceept_bg_color'), 'easyap-setting-styles', 'easyap_setting_styles_modal_consent_colors');
         add_settings_field('modal_consent_btn_options_details_text_color', __('Texto botão "opções"', 'easyap'), array($this, 'modal_consent_btn_options_details_text_color'), 'easyap-setting-styles', 'easyap_setting_styles_modal_consent_colors');
         add_settings_field('modal_consent_btn_options_details_bg_color', __('Fundo botão "opções"', 'easyap'), array($this, 'modal_consent_btn_options_details_bg_color'), 'easyap-setting-styles', 'easyap_setting_styles_modal_consent_colors');
+
+        add_settings_section('easyap_setting_styles_modal_consent_position', __('Posição modal consentimento', 'easyap'),  array($this, 'print_section_info'),  'easyap-setting-styles');
+        add_settings_field('easyap_setting_styles_modal_consent_position', __('Alinhamento horizontal', 'easyap'), array($this, 'modal_consent_position_horizontal'), 'easyap-setting-styles', 'easyap_setting_styles_modal_consent_position');
     }
 
     public function easyap_geral_sanitize($input)
@@ -128,6 +131,9 @@ class Easyap_Admin
 
         if (isset($input['modal_consent_btn_options_details_bg_color']))
             $inputs['modal_consent_btn_options_details_bg_color'] = sanitize_text_field($input['modal_consent_btn_options_details_bg_color']);
+
+        if (isset($input['modal_consent_position_horizontal']))
+            $inputs['modal_consent_position_horizontal'] = sanitize_text_field($input['modal_consent_position_horizontal']);
 
         return $inputs;
     }
@@ -213,6 +219,19 @@ class Easyap_Admin
     {
         $color = 'rgb(232, 241, 242)';
         printf('<input class="color-picker" data-alpha-enabled="true" type="text" name="easyap_styles[modal_consent_btn_options_details_bg_color]" value="%s">', get_option_easyap('easyap_styles', 'modal_consent_btn_options_details_bg_color', null, $color));
+    }
+
+    public function modal_consent_position_horizontal()
+    {
+        $op = get_option_easyap('easyap_styles', 'modal_consent_position_horizontal', null);
+
+        $left = $op == 'left' || $op == null ? "selected" : "";
+        $right = $op == 'right' ? "selected" : "";
+
+        echo '<select name="easyap_styles[modal_consent_position_horizontal]">';
+        echo '<option ' . $left . ' value="left">' . __('Esquerda', 'easyap') . '</option>';
+        echo '<option ' . $right . ' value="right">' . __('Direita', 'easyap') . '</option>';
+        echo '</select>';
     }
 
     public function general_admin_notice()

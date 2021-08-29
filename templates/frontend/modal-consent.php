@@ -21,6 +21,19 @@ $body = get_option_easyap('easyap_geral', 'modal_consent_info', null, 'Este site
 
 </div>
 
+
+<?php
+// modal consent horizontal position
+$modal_consent_horizontal_position = get_option_easyap('easyap_styles', 'modal_consent_position_horizontal', null, 'left');
+
+if($modal_consent_horizontal_position == 'left') {
+    echo "<style> .modal-accept { left: 15px; } </style>";
+}
+if($modal_consent_horizontal_position == 'right') {
+    echo "<style> .modal-accept { right: 15px; } </style>";
+}
+?>
+
 <style>
     .modal-accept {
         background-color: <?php echo get_option_easyap('easyap_styles', 'modal_consent_bg_color', null, 'rgb(19, 41, 61)'); ?>;
