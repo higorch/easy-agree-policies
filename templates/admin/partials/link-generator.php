@@ -1,4 +1,4 @@
-<h2><?php _e('Criar links em formato de shortcode', 'easyap'); ?></h2>
+<h2><?php _e('Criar link em formato de shortcode', 'easyap'); ?></h2>
 
 <table class="form-table" role="presentation">
 
@@ -29,8 +29,9 @@
 </table>
 
 <p>
-    <b style="display: block; font-size: 14px; margin-bottom: 5px;">Copie o shortcode:</b>
+    <b style="display: block; font-size: 14px; margin-bottom: 5px;"><?php _e('Copie o shortcode:', 'easyap'); ?></b>
     <code id="shortcode-link"></code>
+    <small style="display: block; margin-top: 10px;"><?php _e('Cole no texto em: Geral > Modal consentimento > Informações', 'easyap'); ?></small>
 </p>
 
 <script>
