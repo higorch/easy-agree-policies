@@ -47,6 +47,10 @@
     max-width: initial;
 }
 
+.wrap-easyap-tags #scripts-manager {
+    display: none;
+}
+
 .wrap-table, .wrap-table .heading {
     display: block;
 }

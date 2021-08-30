@@ -35,6 +35,7 @@ $tag_manager = (isset($_GET['action']) && 'tag-manager' == $_GET['action']) ? tr
         }
 
         if ($tag_manager) {
+            settings_fields('easyap_tags');
             require_once EASYAP_PATH . 'templates/admin/partials/tag-manager.php';
         }
         ?>

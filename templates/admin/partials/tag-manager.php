@@ -29,6 +29,10 @@
                 </label>
             </div>
 
+            <div id="scripts-manager">
+                .........
+            </div>
+
         </div>
 
         <div class="col list">
@@ -121,6 +125,16 @@
 <script>
     (function($) {
 
+        $('input[name="scripts"]').on('change', function(e) {
+
+            var el = $(this);
+
+            if (el.is(':checked')) {
+                $("#scripts-manager").show();
+            } else {
+                $("#scripts-manager").hide();
+            }
+        });
 
     })(jQuery)
 </script>
