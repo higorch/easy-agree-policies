@@ -27,36 +27,85 @@
 
         <div class="col list">
 
-            <table class="easyap-table" role="presentation">
+            <div class="wrap-table">
 
-                <thead>
-                    <tr>
-                        <th class="text-center actions"></th>
-                        <th><?php _e('Titulo', 'easyap'); ?></th>
-                        <th><?php _e('Categoria', 'easyap'); ?></th>
-                    </tr>
-                </thead>
+                <div class="heading">
+                    <b>Obrigatório</b>
+                    <small>Cookies necessários são essenciais para o funcionamento do site, sem eles o site não funcionaria adequadamente. (Ex. acesso a áreas seguras do site, segurança, legislação).</small>
+                </div>
 
-                <tbody>
-                    <tr>
-                        <td class="text-center actions">
-                            <a href="#" class="edit" title="<?php _e('Editar', 'easyap'); ?>"><span class="dashicons dashicons-edit"></span></a>
-                            <a href="#" class="remove" title="<?php _e('Remover', 'easyap'); ?>"><span class="dashicons dashicons-remove"></span></a>
-                        </td>
-                        <td>Pixel Facebook</td>
-                        <td>Marketing</td>
-                    </tr>
-                    <tr>
-                        <td class="text-center actions">
-                            <a href="#" class="edit"><span class="dashicons dashicons-edit"></span></a>
-                            <a href="#" class="remove"><span class="dashicons dashicons-remove"></span></a>
-                        </td>
-                        <td>Google analytics</td>
-                        <td>Estatísticas</td>
-                    </tr>
-                </tbody>
+                <table class="easyap-table" role="presentation">
 
-            </table>
+                    <thead>
+                        <tr>
+                            <th class="text-center actions"></th>
+                            <th><?php _e('Titulo', 'easyap'); ?></th>
+                            <th><?php _e('Categoria', 'easyap'); ?></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td class="text-center actions">
+                                <a href="#" class="edit" title="<?php _e('Editar', 'easyap'); ?>"><span class="dashicons dashicons-edit"></span></a>
+                                <a href="#" class="remove" title="<?php _e('Remover', 'easyap'); ?>"><span class="dashicons dashicons-remove"></span></a>
+                            </td>
+                            <td>Pixel Facebook</td>
+                            <td>Marketing</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center actions">
+                                <a href="#" class="edit"><span class="dashicons dashicons-edit"></span></a>
+                                <a href="#" class="remove"><span class="dashicons dashicons-remove"></span></a>
+                            </td>
+                            <td>Google analytics</td>
+                            <td>Estatísticas</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div class="wrap-table">
+
+                <div class="heading">
+                    <b>Marketing</b>
+                    <small>Através dos cookies de marketing, é possível que uma empresa exiba anúncios personalizados para você, com base nos seus interesses.</small>
+                </div>
+
+                <table class="easyap-table" role="presentation">
+
+                    <thead>
+                        <tr>
+                            <th class="text-center actions"></th>
+                            <th><?php _e('Titulo', 'easyap'); ?></th>
+                            <th><?php _e('Categoria', 'easyap'); ?></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td class="text-center actions">
+                                <a href="#" class="edit" title="<?php _e('Editar', 'easyap'); ?>"><span class="dashicons dashicons-edit"></span></a>
+                                <a href="#" class="remove" title="<?php _e('Remover', 'easyap'); ?>"><span class="dashicons dashicons-remove"></span></a>
+                            </td>
+                            <td>Pixel Facebook</td>
+                            <td>Marketing</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center actions">
+                                <a href="#" class="edit"><span class="dashicons dashicons-edit"></span></a>
+                                <a href="#" class="remove"><span class="dashicons dashicons-remove"></span></a>
+                            </td>
+                            <td>Google analytics</td>
+                            <td>Estatísticas</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
 
         </div>
 
@@ -151,10 +200,53 @@
         max-width: initial;
     }
 
+    .wrap-table,
+    .wrap-table .heading {
+        display: block;
+    }
+
+    .wrap-table {
+        margin-bottom: 30px;
+    }
+
+    .wrap-table:last-child {
+        margin-bottom: 0;
+    }
+
+    .wrap-table .heading {
+        margin-bottom: 15px;
+    }
+
+    .wrap-table .heading b,
+    .wrap-table .heading small {
+        display: block;
+    }
+
+    .wrap-table .heading b {
+        margin-bottom: 5px;
+    }
+
+    .wrap-table .heading small {
+        font-size: 0.75em;
+        line-height: 16px;
+        text-align: justify;
+        padding: 5px;
+        background: #f2f2f2;
+        border-left: solid 3px #ddd;
+    }
+
     .easyap-table {
         font-family: Arial, Helvetica, sans-serif;
         border-collapse: collapse;
         width: 100%;
+    }
+
+    .easyap-table tr:nth-child(odd) {
+        background: #fff;
+    }
+
+    .easyap-table tr:nth-child(even) {
+        background: #eee;
     }
 
     .easyap-table td,
