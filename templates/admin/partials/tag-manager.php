@@ -34,7 +34,7 @@
 
             <div class="easyap-heading" style="margin: 30px 0 15px 0;">
                 <div class="col">
-                    <span class="title"><?php _e('Scripts', 'easyap'); ?></span>
+                    <span class="title"><?php _e('Tags (scripts)', 'easyap'); ?></span>
                 </div>
                 <div class="col">
                     <a href="#" class="button button-primary"><span class="dashicons dashicons-plus-alt2"></span></a>
