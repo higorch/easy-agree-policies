@@ -53,7 +53,7 @@
 
                     <div class="form-group">
                         <label><?php _e('Local', 'easyap'); ?></label>
-                        <select name="category">
+                        <select name="local[]">
                             <option>---</option>
                             <option value="after-body-open"><?php _e('Após abertura do body', 'easyap'); ?></option>
                             <option value="before-body-open"><?php _e('Antes de fechar o body', 'easyap'); ?></option>
@@ -63,7 +63,7 @@
 
                     <div class="form-group mb-0">
                         <label><?php _e('Script', 'easyap'); ?></label>
-                        <textarea name="script"></textarea>
+                        <textarea name="script[]"></textarea>
                     </div>
 
                 </div>
