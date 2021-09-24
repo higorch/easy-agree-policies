@@ -55,9 +55,9 @@
                         <label><?php _e('Local', 'easyap'); ?></label>
                         <select name="category">
                             <option>---</option>
-                            <option value="before-head-close"><?php _e('Antes do fechamento do head', 'easyap'); ?></option>
                             <option value="after-body-open"><?php _e('Após abertura do body', 'easyap'); ?></option>
                             <option value="before-body-open"><?php _e('Antes de fechar o body', 'easyap'); ?></option>
+                            <option value="before-head-close"><?php _e('Antes do fechamento do head', 'easyap'); ?></option>
                         </select>
                     </div>
 
@@ -77,7 +77,10 @@
             <div class="wrap-table">
 
                 <div class="heading">
-                    <b><?php _e('Necessário', 'easyap'); ?></b>
+                    <b>
+                        <?php _e('Necessário', 'easyap'); ?>
+                        <span style="color: #999;"><?php _e('(todos aqui terão o consentimento)', 'easyap'); ?></span>
+                    </b>
                     <small><?php _e('Cookies necessários são essenciais para o funcionamento do site, sem eles o site não funcionaria adequadamente. (Ex. acesso a áreas seguras do site, segurança, legislação).', 'easyap'); ?></small>
                 </div>
 
