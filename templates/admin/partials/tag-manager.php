@@ -57,7 +57,7 @@
                             <option>---</option>
                             <option value="after-body-open"><?php _e('Após abertura do body', 'easyap'); ?></option>
                             <option value="before-body-open"><?php _e('Antes de fechar o body', 'easyap'); ?></option>
-                            <option value="before-head-close"><?php _e('Antes do fechamento do head', 'easyap'); ?></option>
+                            <option value="before-head-close"><?php _e('Antes de fechar o head', 'easyap'); ?></option>
                         </select>
                     </div>
 
