@@ -71,7 +71,7 @@ class Easyap_Admin
         register_setting('easyap_styles', 'easyap_styles', array($this, 'easyap_styles_sanitize'));
 
         add_settings_section('easyap_setting_styles_modal_consent_position', __('Posição modal consentimento', 'easyap'),  array($this, 'print_section_info'),  'easyap-setting-styles');
-        add_settings_field('easyap_setting_styles_modal_consent_position', __('Alinhamento horizontal', 'easyap'), array($this, 'modal_consent_position_horizontal'), 'easyap-setting-styles', 'easyap_setting_styles_modal_consent_position');
+        add_settings_field('modal_consent_position_horizontal', __('Alinhamento horizontal', 'easyap'), array($this, 'modal_consent_position_horizontal'), 'easyap-setting-styles', 'easyap_setting_styles_modal_consent_position');
 
         add_settings_section('easyap_setting_styles_modal_consent_colors', __('Cores modal consentimento', 'easyap'),  array($this, 'print_section_info'),  'easyap-setting-styles');
         add_settings_field('modal_consent_text_color', __('Textos', 'easyap'), array($this, 'modal_consent_text_color'), 'easyap-setting-styles', 'easyap_setting_styles_modal_consent_colors');
