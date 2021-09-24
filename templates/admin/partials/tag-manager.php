@@ -17,12 +17,12 @@
         <div class="col entry">
 
             <div class="form-group">
-                <label>Título</label>
+                <label><?php _e('Título', 'easyap'); ?></label>
                 <input type="text" name="title">
             </div>
 
             <div class="form-group">
-                <label>Categoria</label>
+                <label><?php _e('Categoria', 'easyap'); ?></label>
                 <select name="category">
                     <option>---</option>
                     <option value="required"><?php _e('Necessário', 'easyap'); ?></option>
@@ -32,7 +32,7 @@
                 </select>
             </div>
 
-            <div class="easyap-heading" style="margin: 30px 0;">
+            <div class="easyap-heading" style="margin: 30px 0 15px 0;">
                 <div class="col">
                     <span class="title"><?php _e('Scripts', 'easyap'); ?></span>
                 </div>
@@ -43,8 +43,29 @@
 
             <div id="scripts-manager">
 
-                <div class="empty-tags">
-                    <p>Nunhum script configurado.</p>
+                <!-- <div class="empty-tags">
+                    <p><?php // _e('Nunhum script configurado.', 'easyap'); ?></p>
+                </div> -->
+
+                <div class="easyap-script-tag">
+
+                    <a href="#" class="close">x</a>
+
+                    <div class="form-group">
+                        <label><?php _e('Local', 'easyap'); ?></label>
+                        <select name="category">
+                            <option>---</option>
+                            <option value="before-head-close"><?php _e('Antes do fechamento do head', 'easyap'); ?></option>
+                            <option value="after-body-open"><?php _e('Após abertura do body', 'easyap'); ?></option>
+                            <option value="before-body-open"><?php _e('Antes de fechar o body', 'easyap'); ?></option>
+                        </select>
+                    </div>
+
+                    <div class="form-group mb-0">
+                        <label><?php _e('Script', 'easyap'); ?></label>
+                        <textarea name="script"></textarea>
+                    </div>
+
                 </div>
 
             </div>

@@ -151,6 +151,35 @@
     color: #a53222;
 }
 
+/* easyap-script-tag */
+.easyap-script-tag {
+    position: relative;
+    display: block;
+    padding: 15px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-color: #ececec;
+    border: solid 1px #ddd;
+}
+.easyap-script-tag textarea {
+    min-height: 100px;
+}
+.easyap-script-tag a.close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    line-height: 14px;
+    background-color: #a53222;
+    color: #fff;
+    border-radius: 3px;
+    text-align: center;
+    font-size: .7em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
 /* empty-tags */
 .empty-tags {
     text-align: center;
@@ -172,3 +201,8 @@
     line-height: 16px;
     text-align: justify;
 }
+
+.mb-0 {margin-bottom: 0;}
+.mt-0 {margin-top: 0;}
+.ml-0 {margin-left: 0;}
+.mr-0 {margin-right: 0;}
