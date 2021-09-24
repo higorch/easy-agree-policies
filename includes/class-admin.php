@@ -43,7 +43,7 @@ class Easyap_Admin
 
     public function menu_page()
     {
-        add_menu_page(__('Easy agree policies', 'easyap'), 'Easy agree policies', 'manage_options', 'easy-agree-policies', array($this, 'configs'), 'dashicons-analytics');
+        add_menu_page(__('Easy agree policies', 'easyap'), 'Agree policies', 'manage_options', 'easy-agree-policies', array($this, 'configs'), 'dashicons-analytics');
     }
 
     public function configs()
