@@ -3,7 +3,7 @@
         <span class="title"><?php _e('Gerenciar tags', 'easyap'); ?></span>
     </div>
     <div class="col">
-        <a href="#" class="action">
+        <a href="#" class="button button-primary">
             <span class="dashicons dashicons-saved"></span>
             <?php _e('Salvar', 'easyap'); ?>
         </a>
@@ -32,17 +32,21 @@
                 </select>
             </div>
 
-            <div class="easyap-heading" style="margin-top: 30px;">
+            <div class="easyap-heading" style="margin: 30px 0;">
                 <div class="col">
                     <span class="title"><?php _e('Scripts', 'easyap'); ?></span>
                 </div>
                 <div class="col">
-                    <a href="#" class="action"><span class="dashicons dashicons-plus-alt2"></span></a>
+                    <a href="#" class="button button-primary"><span class="dashicons dashicons-plus-alt2"></span></a>
                 </div>
             </div>
 
             <div id="scripts-manager">
-                .........
+
+                <div class="empty-tags">
+                    <p>Nunhum script configurado.</p>
+                </div>
+
             </div>
 
         </div>

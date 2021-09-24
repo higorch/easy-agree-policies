@@ -31,7 +31,7 @@
 <p>
     <b style="display: block; font-size: 14px; margin-bottom: 5px;"><?php _e('Copie o shortcode:', 'easyap'); ?></b>
     <code id="shortcode-link"></code>
-    <small style="display: block; margin-top: 10px;"><?php _e('Cole no texto em: Geral > Modal consentimento > Informações', 'easyap'); ?></small>
+    <small style="display: block; margin-top: 10px;"><?php _e('Cole na descrição em: Geral > Modal consentimento > Informações', 'easyap'); ?></small>
 </p>
 
 <script>
