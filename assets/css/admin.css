@@ -47,6 +47,38 @@
     max-width: initial;
 }
 
+.easyap-heading {
+    display: block;
+    width: 100%;
+    font-size: 0;
+}
+.easyap-heading .col {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: initial;
+    padding: 0 !important;
+}
+.easyap-heading .col:nth-child(1) {
+    width: 65%;
+}
+.easyap-heading .col:nth-child(2) {
+    width: 35%;
+    text-align: right;
+}
+.easyap-heading span.title {
+    color: #1d2327;
+    font-weight: 600;
+}
+.easyap-heading a.action {
+    text-decoration: none;
+    background-color: #2271b1;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 15px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
 .wrap-easyap-tags #scripts-manager {
     display: none;
 }

@@ -1,4 +1,14 @@
-<h2><?php _e('Gerenciar tags', 'easyap'); ?></h2>
+<div class="easyap-heading" style="margin-top: 15px;">
+    <div class="col">
+        <span class="title"><?php _e('Gerenciar tags', 'easyap'); ?></span>
+    </div>
+    <div class="col">
+        <a href="#" class="action">
+            <span class="dashicons dashicons-saved"></span>
+            <?php _e('Salvar', 'easyap'); ?>
+        </a>
+    </div>
+</div>
 
 <div class="wrap-easyap-tags">
 
@@ -22,11 +32,13 @@
                 </select>
             </div>
 
-            <div class="form-group">
-                <label>
-                    <input type="checkbox" name="scripts">
-                    <?php _e('GERENCIAR SCRIPTS', 'easyap'); ?>
-                </label>
+            <div class="easyap-heading" style="margin-top: 30px;">
+                <div class="col">
+                    <span class="title"><?php _e('Scripts', 'easyap'); ?></span>
+                </div>
+                <div class="col">
+                    <a href="#" class="action"><span class="dashicons dashicons-plus-alt2"></span></a>
+                </div>
             </div>
 
             <div id="scripts-manager">
