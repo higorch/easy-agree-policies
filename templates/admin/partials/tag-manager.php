@@ -90,7 +90,6 @@
                         <tr>
                             <th class="text-center actions"></th>
                             <th><?php _e('Titulo', 'easyap'); ?></th>
-                            <th><?php _e('Categoria', 'easyap'); ?></th>
                         </tr>
                     </thead>
 
@@ -101,7 +100,6 @@
                                 <a href="#" class="remove" title="<?php _e('Remover', 'easyap'); ?>"><span class="dashicons dashicons-remove"></span></a>
                             </td>
                             <td>Pixel Facebook</td>
-                            <td>Marketing</td>
                         </tr>
                         <tr>
                             <td class="text-center actions">
@@ -109,7 +107,6 @@
                                 <a href="#" class="remove"><span class="dashicons dashicons-remove"></span></a>
                             </td>
                             <td>Google analytics</td>
-                            <td>Estatísticas</td>
                         </tr>
                     </tbody>
 
