@@ -1,14 +1,4 @@
-<div class="easyap-heading" style="margin-top: 15px;">
-    <div class="col">
-        <span class="title"><?php _e('Gerenciar tags', 'easyap'); ?></span>
-    </div>
-    <div class="col">
-        <a href="#" class="button button-primary">
-            <span class="dashicons dashicons-saved"></span>
-            <?php _e('Salvar', 'easyap'); ?>
-        </a>
-    </div>
-</div>
+<h2><?php _e('Gerenciar tags', 'easyap'); ?></h2>
 
 <div class="wrap-easyap-tags">
 
@@ -34,40 +24,17 @@
 
             <div class="easyap-heading" style="margin: 30px 0 15px 0;">
                 <div class="col">
-                    <span class="title"><?php _e('Tags (scripts)', 'easyap'); ?></span>
+                    <a href="#" id="add-script" class="button button-primary"><span class="dashicons dashicons-plus-alt2"></span><?php _e('Add script', 'easyap'); ?></a>
                 </div>
                 <div class="col">
-                    <a href="#" class="button button-primary"><span class="dashicons dashicons-plus-alt2"></span></a>
+                    <a href="#" class="button button-primary"><span class="dashicons dashicons-saved"></span><?php _e('Salvar', 'easyap'); ?></a>
                 </div>
             </div>
 
             <div id="scripts-manager">
-
-                <!-- <div class="empty-tags">
-                    <p><?php // _e('Nunhum script configurado.', 'easyap'); ?></p>
-                </div> -->
-
-                <div class="easyap-script-tag">
-
-                    <a href="#" class="close">x</a>
-
-                    <div class="form-group">
-                        <label><?php _e('Local', 'easyap'); ?></label>
-                        <select name="local[]">
-                            <option>---</option>
-                            <option value="after-body-open"><?php _e('Após abertura do body', 'easyap'); ?></option>
-                            <option value="before-body-open"><?php _e('Antes de fechar o body', 'easyap'); ?></option>
-                            <option value="before-head-close"><?php _e('Antes de fechar o head', 'easyap'); ?></option>
-                        </select>
-                    </div>
-
-                    <div class="form-group mb-0">
-                        <label><?php _e('Script', 'easyap'); ?></label>
-                        <textarea name="script[]"></textarea>
-                    </div>
-
+                <div class="empty-tags">
+                    <p><?php _e('Nunhum script configurado.', 'easyap'); ?></p>
                 </div>
-
             </div>
 
         </div>
@@ -162,15 +129,51 @@
 <script>
     (function($) {
 
-        $('input[name="scripts"]').on('change', function(e) {
+        $('a#add-script').on('click', function(e) {
 
-            var el = $(this);
+            e.preventDefault();
 
-            if (el.is(':checked')) {
-                $("#scripts-manager").show();
-            } else {
-                $("#scripts-manager").hide();
+            output = '<div class="easyap-script-tag">';
+
+            output += '<a href="#" class="close">x</a>';
+
+            output += '<div class="form-group">';
+            output += '<label>Local</label>';
+            output += '<select name="local[]">';
+            output += '<option>---</option>';
+            output += '<option value="after-body-open">Após abertura do body</option>';
+            output += '<option value="before-body-open">Antes de fechar o body</option>';
+            output += '<option value="before-head-close">Antes de fechar o head</option>';
+            output += '</select>';
+            output += '</div>';
+
+            output += '<div class="form-group">';
+            output += '<label>Script</label>';
+            output += '<textarea name="script[]"></textarea>';
+            output += '</div>';
+
+            output += '</div>';
+
+            $("#scripts-manager").prepend(output);
+
+            // remove empty alert
+            if ($("#scripts-manager .easyap-script-tag").length > 0) {
+                $('#scripts-manager .empty-tags').hide();
             }
+
+        });
+
+        $(document).on('click', '.easyap-script-tag a.close', function(e) {
+
+            e.preventDefault();
+
+            $(this).parent('.easyap-script-tag').remove();
+
+            // add empty alert
+            if ($("#scripts-manager .easyap-script-tag").length == 0) {
+                $('#scripts-manager .empty-tags').show();
+            }
+
         });
 
     })(jQuery)

@@ -52,20 +52,17 @@
     display: inline-block;
     vertical-align: middle;
     font-size: initial;
+    width: 50%;
     padding: 0 !important;
 }
-.easyap-heading .col:nth-child(1) {
-    width: 65%;
-}
 .easyap-heading .col:nth-child(2) {
-    width: 35%;
     text-align: right;
 }
 .easyap-heading span.title {
     color: #1d2327;
     font-weight: 600;
 }
-.easyap-heading .col:nth-child(2) .button .dashicons {
+.easyap-heading .col .button .dashicons {
     line-height: 28px;
 }
 
@@ -128,7 +125,7 @@
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #1d2327;
+    background-color: #3c434a;
     color: white;
 }
 .easyap-table .text-center {
@@ -155,11 +152,15 @@
 .easyap-script-tag {
     position: relative;
     display: block;
+    margin-bottom: 15px;
     padding: 15px;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     background-color: #ececec;
     border: solid 1px #ddd;
+}
+.easyap-script-tag:last-child {
+    margin-bottom: 0;
 }
 .easyap-script-tag textarea {
     min-height: 100px;
