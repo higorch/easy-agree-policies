@@ -24,7 +24,7 @@
 
             <div class="easyap-heading" style="margin: 30px 0 15px 0;">
                 <div class="col">
-                    <a href="#" id="add-script" class="button button-primary"><span class="dashicons dashicons-plus-alt2"></span><?php _e('Add script', 'easyap'); ?></a>
+                    <a href="#" id="add-script" class="button button-primary"><span class="dashicons dashicons-plus-alt2"></span><?php _e('Add tag', 'easyap'); ?></a>
                 </div>
                 <div class="col">
                     <a href="#" class="button button-primary"><span class="dashicons dashicons-saved"></span><?php _e('Salvar', 'easyap'); ?></a>
