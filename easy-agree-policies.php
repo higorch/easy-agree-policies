@@ -26,5 +26,6 @@ define('EASYAP_PATH', plugin_dir_path(EASYAP_FILE));
 
 require_once EASYAP_PATH . 'includes/helpers.php';
 require_once EASYAP_PATH . 'includes/class-migration.php';
+require_once EASYAP_PATH . 'includes/class-request.php';
 require_once EASYAP_PATH . 'includes/class-admin.php';
 require_once EASYAP_PATH . 'includes/class-frontend.php';
