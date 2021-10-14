@@ -25,7 +25,16 @@
             });
         });
 
-        console.log(title, category, JSON.stringify(scripts), easyap_obj.ajax_url);
+        var data = {
+            action: 'save_tag',
+            title: title,
+            category: category,
+            scripts: JSON.stringify(scripts),
+        };
+
+        $.post(easyap_obj.ajax_url, data, function (response) {
+            console.log(response);
+        });
 
     });
 

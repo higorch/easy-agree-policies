@@ -21,6 +21,12 @@ class Easyap_Request
 
     public function save_tag()
     {
+        $title = sanitize_text_field($_POST['title']);
+        $category = sanitize_text_field($_POST['category']);
+        $scripts = filter_input(INPUT_POST, 'scripts', FILTER_SANITIZE_SPECIAL_CHARS);
+
+        var_dump($title, $category, html_entity_decode($scripts, ENT_QUOTES, "utf-8"));
+
         echo 'ok';
 
         wp_die();
