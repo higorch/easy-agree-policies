@@ -8,6 +8,8 @@ class Easyap_Request
 {
     public function __construct()
     {
+        add_action('wp_ajax_save_tag', array($this, 'save_tag'));
+
         add_action('admin_enqueue_scripts', array($this, 'admin_enqueue_scripts'));
     }
 
@@ -15,6 +17,13 @@ class Easyap_Request
     {
         wp_enqueue_script('easyap-admin-http', EASYAP_URL . 'assets/js/admin-request.js', array('jquery'), '1.0.0', true);
         wp_localize_script('easyap-admin-http', 'easyap_obj', array('ajax_url' => admin_url('admin-ajax.php')));
+    }
+
+    public function save_tag()
+    {
+        echo 'ok';
+
+        wp_die();
     }
 }
 

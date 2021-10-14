@@ -27,7 +27,7 @@
                     <a href="#" id="add-script" class="button button-primary"><span class="dashicons dashicons-plus-alt2"></span><?php _e('Add tag', 'easyap'); ?></a>
                 </div>
                 <div class="col">
-                    <a href="#" class="button button-primary"><span class="dashicons dashicons-saved"></span><?php _e('Salvar', 'easyap'); ?></a>
+                    <a href="#" id="save-tag" class="button button-primary"><span class="dashicons dashicons-saved"></span><?php _e('Salvar', 'easyap'); ?></a>
                 </div>
             </div>
 
