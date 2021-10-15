@@ -22,10 +22,10 @@ class Easyap_Migration
     {
         global $wpdb;
 
-        $table_name = $wpdb->prefix . 'easyap_tag_manager';
+        $table = $wpdb->prefix . 'easyap_tag_manager';
         $charset_collate = $wpdb->get_charset_collate();
 
-        $sql = "CREATE TABLE $table_name (
+        $sql = "CREATE TABLE $table (
             id mediumint(9) NOT NULL AUTO_INCREMENT,
             title VARCHAR(255) NOT NULL,
             category VARCHAR(50) NOT NULL,

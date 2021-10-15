@@ -1,5 +1,12 @@
 (function ($) {
 
+    // load table tags
+    $.loadTags = function () {
+
+    };
+
+    $.loadTags();
+
     $("#save-tag").on('click', function (e) {
 
         e.preventDefault();
@@ -8,6 +15,17 @@
         var category = $('select[name="category"]').val();
         var scripts = [];
 
+        if (title == '') {
+            alert('Informe o título');
+            return;
+        }
+
+        if (category == '') {
+            alert('Informe a categoria');
+            return;
+        }
+
+        // scripts push
         $('#scripts-manager .easyap-script-tag').map(function () {
 
             var el = $(this);
@@ -15,7 +33,7 @@
             var local = el.find('select[name="local[]"]').val();
             var tag = el.find('textarea[name="script[]"]').val();
 
-            if (!local || local == '---' || tag == '') {
+            if (!local || tag == '') {
                 return;
             }
 
@@ -25,15 +43,21 @@
             });
         });
 
-        var data = {
+        // post data and reload table tags
+        $.post(easyap_obj.ajax_url, {
             action: 'save_tag',
             title: title,
             category: category,
             scripts: JSON.stringify(scripts),
-        };
+        }).done(function (response) {
 
-        $.post(easyap_obj.ajax_url, data, function (response) {
-            console.log(response);
+            // reset entry
+            $('input[name="title"]').val('');
+            $('select[name="category"]').val('');
+            $('#scripts-manager .easyap-script-tag').remove();
+
+            $.loadTags();
+
         });
 
     });

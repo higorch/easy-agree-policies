@@ -14,7 +14,7 @@
             <div class="form-group">
                 <label><?php _e('Categoria', 'easyap'); ?></label>
                 <select name="category">
-                    <option>---</option>
+                    <option value="">---</option>
                     <option value="required"><?php _e('Necessário', 'easyap'); ?></option>
                     <option value="marketing"><?php _e('Marketing', 'easyap'); ?></option>
                     <option value="statistic"><?php _e('Estatística', 'easyap'); ?></option>
@@ -140,7 +140,7 @@
             output += '<div class="form-group">';
             output += '<label>Local</label>';
             output += '<select name="local[]">';
-            output += '<option>---</option>';
+            output += '<option value="">---</option>';
             output += '<option value="after-body-open">Após abertura do body</option>';
             output += '<option value="before-body-open">Antes de fechar o body</option>';
             output += '<option value="before-head-close">Antes de fechar o head</option>';
