@@ -62,6 +62,7 @@ class Easyap_Admin
         add_settings_field('modal_consent_info', __('Informações', 'easyap'), array($this, 'modal_consent_info'), 'easyap-setting-geral', 'easyap_setting_geral_modal_consent');
         add_settings_field('modal_consent_btn_accept_label', __('Label botão "aceito"', 'easyap'), array($this, 'modal_consent_btn_accept_label'), 'easyap-setting-geral', 'easyap_setting_geral_modal_consent');
         add_settings_field('modal_consent_btn_options_details_label', __('Label botão "opções"', 'easyap'), array($this, 'modal_consent_btn_options_details_label'), 'easyap-setting-geral', 'easyap_setting_geral_modal_consent');
+        add_settings_field('modal_consent_defalt', __('Consentimento por default', 'easyap'), array($this, 'modal_consent_defalt'), 'easyap-setting-geral', 'easyap_setting_geral_modal_consent');
 
         add_settings_section('easyap_setting_geral_modal_options', __('Modal opções', 'easyap'),  array($this, 'print_section_info'),  'easyap-setting-geral');
         add_settings_field('modal_options_title', __('Título', 'easyap'), array($this, 'modal_options_title_input'), 'easyap-setting-geral', 'easyap_setting_geral_modal_options');
@@ -104,6 +105,9 @@ class Easyap_Admin
 
         if (isset($input['modal_options_save_preferences_label']))
             $inputs['modal_options_save_preferences_label'] = sanitize_text_field($input['modal_options_save_preferences_label']);
+
+        if (isset($input['modal_consent_defalt']))
+            $inputs['modal_consent_defalt'] = sanitize_text_field($input['modal_consent_defalt']);
 
         return $inputs;
     }
@@ -168,6 +172,19 @@ class Easyap_Admin
     public function modal_consent_btn_options_details_label()
     {
         printf('<input class="regular-text" type="text" name="easyap_geral[modal_consent_btn_options_details_label]" value="%s">', get_option_easyap('easyap_geral', 'modal_consent_btn_options_details_label'));
+    }
+
+    public function modal_consent_defalt()
+    {
+        $op = get_option_easyap('easyap_geral', 'modal_consent_defalt');
+
+        $no = $op == 'no' ? "selected" : "";
+        $yes = $op == 'yes' ? "selected" : "";
+
+        echo '<select name="easyap_geral[modal_consent_defalt]">';
+        echo '<option ' . $no . ' value="no">' . __('Não', 'easyap') . '</option>';
+        echo '<option ' . $yes . ' value="yes">' . __('Sim', 'easyap') . '</option>';
+        echo '</select>';
     }
 
     public function modal_options_title_input()
