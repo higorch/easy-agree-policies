@@ -168,9 +168,19 @@
         }
 
         if (el.hasClass('remove')) {
-            alert('remove ' + el.data('id'));
-        }
 
+            if (window.confirm("Você realmente excluir a tag?")) {
+
+                $.post(easyap_obj.ajax_url, {
+                    action: 'remove_tag',
+                    id: id
+                }).done(function (response) {
+                    $.loadTags();
+                });
+
+            }
+
+        }
 
     });
 
