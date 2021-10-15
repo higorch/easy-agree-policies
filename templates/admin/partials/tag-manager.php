@@ -6,6 +6,8 @@
 
         <div class="col entry">
 
+            <input type="hidden" name="id" value="">
+
             <div class="form-group">
                 <label><?php _e('Título', 'easyap'); ?></label>
                 <input type="text" name="title">
@@ -46,31 +48,14 @@
                 <div class="heading">
                     <b>
                         <?php _e('Necessário', 'easyap'); ?>
-                        <span style="color: #999;"><?php _e('(todos aqui terão o consentimento)', 'easyap'); ?></span>
+                        <span style="color: #999;"><?php _e('(todos aqui terão o consentimento obrigatório)', 'easyap'); ?></span>
                     </b>
                     <small><?php _e('Cookies necessários são essenciais para o funcionamento do site, sem eles o site não funcionaria adequadamente. (Ex. acesso a áreas seguras do site, segurança, legislação).', 'easyap'); ?></small>
                 </div>
 
-                <table class="easyap-table">
-
-                    <thead>
-                        <tr>
-                            <th class="text-center actions"></th>
-                            <th><?php _e('Titulo', 'easyap'); ?></th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <td class="text-center actions">
-                                <a href="#" class="edit" title="<?php _e('Editar', 'easyap'); ?>"><span class="dashicons dashicons-edit"></span></a>
-                                <a href="#" class="remove" title="<?php _e('Remover', 'easyap'); ?>"><span class="dashicons dashicons-remove"></span></a>
-                            </td>
-                            <td>Pixel Facebook</td>
-                        </tr>
-                    </tbody>
-
-                </table>
+                <div class="empty-tags">
+                    <p><?php _e('Nunhuma tag configurada.', 'easyap'); ?></p>
+                </div>
 
             </div>
 
@@ -122,6 +107,7 @@
 <script>
     (function($) {
 
+        // add script
         $('a#add-script').on('click', function(e) {
 
             e.preventDefault();
@@ -156,6 +142,7 @@
 
         });
 
+        // remove script
         $(document).on('click', '.easyap-script-tag a.close', function(e) {
 
             e.preventDefault();

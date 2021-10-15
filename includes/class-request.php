@@ -12,6 +12,7 @@ class Easyap_Request
 
         add_action('wp_ajax_save_tag', array($this, 'save_tag'));
         add_action('wp_ajax_load_table_tag', array($this, 'load_table_tag'));
+        add_action('wp_ajax_edit_tag', array($this, 'edit_tag'));
     }
 
     public function admin_enqueue_scripts()
@@ -25,8 +26,8 @@ class Easyap_Request
         global $wpdb;
 
         $table = $wpdb->prefix . 'easyap_tag_manager';
-        $format = array('%s', '%s', '%s');
 
+        $id = (int) sanitize_text_field($_POST['id']);
         $scripts = filter_input(INPUT_POST, 'scripts', FILTER_SANITIZE_SPECIAL_CHARS);
 
         $data = [
@@ -35,9 +36,15 @@ class Easyap_Request
             'tag' => $scripts == '[]' ? null : $scripts,
         ];
 
-        $wpdb->insert($table, $data, $format);
-
-        echo 'ok';
+        if ($id) {
+            $format = array('%s', '%s', '%s', '%s');
+            $where = array('id' => $id);
+            echo $wpdb->update($table, $data, $where, $format);
+        } else {
+            $format = array('%s', '%s', '%s');
+            $wpdb->insert($table, $data, $format);
+            echo $wpdb->insert_id;
+        }
 
         wp_die();
     }
@@ -65,6 +72,11 @@ class Easyap_Request
         echo json_encode($data, JSON_UNESCAPED_UNICODE);
 
         wp_die();
+    }
+
+    public function edit_tag()
+    {
+        # code...
     }
 }
 
