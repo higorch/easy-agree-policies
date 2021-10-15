@@ -13,6 +13,7 @@ class Easyap_Request
         add_action('wp_ajax_save_tag', array($this, 'save_tag'));
         add_action('wp_ajax_load_table_tag', array($this, 'load_table_tag'));
         add_action('wp_ajax_edit_tag', array($this, 'edit_tag'));
+        add_action('wp_ajax_remove_tag', array($this, 'remove_tag'));
     }
 
     public function admin_enqueue_scripts()
@@ -36,12 +37,13 @@ class Easyap_Request
             'tag' => $scripts == '[]' ? null : $scripts,
         ];
 
+        $format = array('%s', '%s', '%s');
+
         if ($id) {
-            $format = array('%s', '%s', '%s', '%s');
+            $where_format = array('%d');
             $where = array('id' => $id);
-            echo $wpdb->update($table, $data, $where, $format);
+            echo $wpdb->update($table, $data, $where, $format, $where_format);
         } else {
-            $format = array('%s', '%s', '%s');
             $wpdb->insert($table, $data, $format);
             echo $wpdb->insert_id;
         }
@@ -51,8 +53,6 @@ class Easyap_Request
 
     public function load_table_tag()
     {
-        // html_entity_decode($data['scripts'], ENT_QUOTES, "utf-8");
-
         global $wpdb;
 
         $data = [];
@@ -76,7 +76,32 @@ class Easyap_Request
 
     public function edit_tag()
     {
-        # code...
+        global $wpdb;
+
+        $id = (int) sanitize_text_field($_GET['id']);
+
+        $table = $wpdb->prefix . 'easyap_tag_manager';
+        $tag = $wpdb->get_row($wpdb->prepare("SELECT * FROM $table WHERE id = %d", $id), ARRAY_A);
+
+        $data['id'] = $tag['id'];
+        $data['title'] = $tag['title'];
+        $data['category'] = $tag['category'];
+        $data['tags'] = json_decode(html_entity_decode($tag['tag'], ENT_QUOTES, "utf-8"), true);
+
+        echo json_encode($data, JSON_UNESCAPED_UNICODE);
+
+        wp_die();
+    }
+
+    public function remove_tag()
+    {
+        global $wpdb;
+
+        echo $wpdb->delete(
+            $wpdb->prefix . 'easyap_tag_manager',
+            ['id' => (int) sanitize_text_field($_POST['id'])],
+            ['%d'],
+        );
     }
 }
 

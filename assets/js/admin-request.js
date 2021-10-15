@@ -52,7 +52,7 @@
 
         e.preventDefault();
 
-        var id = $('input[name="id"]').val();
+        var tag_id = $('input[name="tag_id"]').val();
         var title = $('input[name="title"]').val();
         var category = $('select[name="category"]').val();
         var scripts = [];
@@ -88,7 +88,7 @@
         // post data and reload table tags
         $.post(easyap_obj.ajax_url, {
             action: 'save_tag',
-            id: id,
+            id: tag_id,
             title: title,
             category: category,
             scripts: JSON.stringify(scripts),
@@ -102,6 +102,75 @@
             $.loadTags();
 
         });
+
+    });
+
+    // edit or remove tag
+    $(document).on('click', '.easyap-table .actions a', function (e) {
+
+        e.preventDefault();
+
+        var el = $(this);
+        var id = el.data('id');
+
+        if (el.hasClass('edit')) {
+
+            $('input[name="tag_id"]').val(id);
+
+            $.get(easyap_obj.ajax_url, {
+                action: 'edit_tag',
+                id: id,
+            }).done(function (response) {
+
+                var data = JSON.parse(response);
+
+                $('input[name="tag_id"]').val(data.id);
+                $('input[name="title"]').val(data.title);
+                $('select[name="category"]').val(data.category);
+
+                $("#scripts-manager .easyap-script-tag").remove();
+                $('#scripts-manager .empty-tags').show();
+
+                $.each(data.tags, function (idx, tag) {
+
+                    output = '<div class="easyap-script-tag">';
+
+                    output += '<a href="#" class="close">x</a>';
+
+                    output += '<div class="form-group">';
+                    output += '<label>Local</label>';
+                    output += '<select name="local[]">';
+                    output += '<option value="">---</option>';
+                    output += '<option ' + (tag.local == 'after-body-open' ? 'selected' : '') + ' value="after-body-open">Após abertura do body</option>';
+                    output += '<option ' + (tag.local == 'before-body-open' ? 'selected' : '') + ' value="before-body-open">Antes de fechar o body</option>';
+                    output += '<option ' + (tag.local == 'before-head-close' ? 'selected' : '') + ' value="before-head-close">Antes de fechar o head</option>';
+                    output += '</select>';
+                    output += '</div>';
+
+                    output += '<div class="form-group">';
+                    output += '<label>Script</label>';
+                    output += '<textarea name="script[]">' + tag.tag + '</textarea>';
+                    output += '</div>';
+
+                    output += '</div>';
+
+                    $("#scripts-manager").prepend(output);
+
+                });
+
+                // remove empty alert
+                if ($("#scripts-manager .easyap-script-tag").length > 0) {
+                    $('#scripts-manager .empty-tags').hide();
+                }
+
+            });
+
+        }
+
+        if (el.hasClass('remove')) {
+            alert('remove ' + el.data('id'));
+        }
+
 
     });
 

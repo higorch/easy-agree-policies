@@ -6,7 +6,7 @@
 
         <div class="col entry">
 
-            <input type="hidden" name="id" value="">
+            <input type="hidden" name="tag_id" value="">
 
             <div class="form-group">
                 <label><?php _e('Título', 'easyap'); ?></label>
