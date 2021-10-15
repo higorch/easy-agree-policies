@@ -41,7 +41,7 @@
 
         <div class="col list">
 
-            <div class="wrap-table">
+            <div class="wrap-table" id="required">
 
                 <div class="heading">
                     <b>
@@ -51,7 +51,7 @@
                     <small><?php _e('Cookies necessários são essenciais para o funcionamento do site, sem eles o site não funcionaria adequadamente. (Ex. acesso a áreas seguras do site, segurança, legislação).', 'easyap'); ?></small>
                 </div>
 
-                <table class="easyap-table" role="presentation">
+                <table class="easyap-table">
 
                     <thead>
                         <tr>
@@ -68,20 +68,13 @@
                             </td>
                             <td>Pixel Facebook</td>
                         </tr>
-                        <tr>
-                            <td class="text-center actions">
-                                <a href="#" class="edit"><span class="dashicons dashicons-edit"></span></a>
-                                <a href="#" class="remove"><span class="dashicons dashicons-remove"></span></a>
-                            </td>
-                            <td>Google analytics</td>
-                        </tr>
                     </tbody>
 
                 </table>
 
             </div>
 
-            <div class="wrap-table">
+            <div class="wrap-table" id="marketing">
 
                 <div class="heading">
                     <b><?php _e('Marketing', 'easyap'); ?></b>
@@ -94,7 +87,7 @@
 
             </div>
 
-            <div class="wrap-table">
+            <div class="wrap-table" id="statistic">
 
                 <div class="heading">
                     <b><?php _e('Estatística', 'easyap'); ?></b>
@@ -107,7 +100,7 @@
 
             </div>
 
-            <div class="wrap-table">
+            <div class="wrap-table" id="functional">
 
                 <div class="heading">
                     <b><?php _e('Funcional', 'easyap'); ?></b>

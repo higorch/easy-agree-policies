@@ -3,6 +3,12 @@
     // load table tags
     $.loadTags = function () {
 
+        $.get(easyap_obj.ajax_url, {
+            action: 'load_table_tag',
+        }).done(function (response) {
+            console.log(response);
+        });
+
     };
 
     $.loadTags();

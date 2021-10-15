@@ -45,6 +45,26 @@ class Easyap_Request
     public function load_table_tag()
     {
         // html_entity_decode($data['scripts'], ENT_QUOTES, "utf-8");
+
+        global $wpdb;
+
+        $data = [];
+
+        $table = $wpdb->prefix . 'easyap_tag_manager';
+        $results = $wpdb->get_results("SELECT * FROM {$table}", ARRAY_A);
+
+        if ($results) {
+            foreach ($results as $result) {
+                $data[$result['category']][] = [
+                    'id' => $result['id'],
+                    'title' => $result['title']
+                ];
+            }
+        }
+
+        echo json_encode($data, JSON_UNESCAPED_UNICODE);
+
+        wp_die();
     }
 }
 
