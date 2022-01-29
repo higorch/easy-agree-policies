@@ -55,7 +55,7 @@
         var tag_id = $('input[name="tag_id"]').val();
         var title = $('input[name="title"]').val();
         var category = $('select[name="category"]').val();
-        var scripts = [];
+        var cookies = [];
 
         if (title == '') {
             alert('Informe o título');
@@ -67,21 +67,16 @@
             return;
         }
 
-        // scripts push
-        $('#scripts-manager .easyap-script-tag').map(function () {
+        // cookies push
+        $('#cookies-manager .easyap-cookies-tag').map(function () {
 
             var el = $(this);
 
-            var local = el.find('select[name="local[]"]').val();
-            var tag = el.find('textarea[name="script[]"]').val();
-
-            if (!local || tag == '') {
-                return;
-            }
-
-            scripts.push({
-                local: local,
-                tag: tag,
+            cookies.push({
+                name: el.find('input[name="name[]"]').val(),
+                domain: el.find('input[name="domain[]"]').val(),
+                duration: el.find('input[name="duration[]"]').val(),
+                description: el.find('textarea[name="description[]"]').val(),
             });
         });
 
@@ -91,16 +86,15 @@
             id: tag_id,
             title: title,
             category: category,
-            scripts: JSON.stringify(scripts),
+            cookies: JSON.stringify(cookies),
         }).done(function (response) {
 
             // reset entry
             $('input[name="title"]').val('');
             $('select[name="category"]').val('');
-            $('#scripts-manager .easyap-script-tag').remove();
+            $('#cookies-manager .easyap-cookies-tag').remove();
 
             $.loadTags();
-
         });
 
     });
@@ -128,12 +122,12 @@
                 $('input[name="title"]').val(data.title);
                 $('select[name="category"]').val(data.category);
 
-                $("#scripts-manager .easyap-script-tag").remove();
-                $('#scripts-manager .empty-tags').show();
+                $("#cookies-manager .easyap-cookies-tag").remove();
+                $('#cookies-manager .empty-tags').show();
 
                 $.each(data.tags, function (idx, tag) {
 
-                    output = '<div class="easyap-script-tag">';
+                    output = '<div class="easyap-cookies-tag">';
 
                     output += '<a href="#" class="close">x</a>';
 
@@ -154,13 +148,13 @@
 
                     output += '</div>';
 
-                    $("#scripts-manager").prepend(output);
+                    $("#cookies-manager").prepend(output);
 
                 });
 
                 // remove empty alert
-                if ($("#scripts-manager .easyap-script-tag").length > 0) {
-                    $('#scripts-manager .empty-tags').hide();
+                if ($("#cookies-manager .easyap-cookies-tag").length > 0) {
+                    $('#cookies-manager .empty-tags').hide();
                 }
 
             });

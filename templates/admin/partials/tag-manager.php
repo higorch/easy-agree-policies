@@ -10,7 +10,7 @@
 
             <div class="form-group">
                 <label><?php _e('Título', 'easyap'); ?></label>
-                <input type="text" name="title">
+                <input type="text" name="title" placeholder="Google analytics">
             </div>
 
             <div class="form-group">
@@ -26,16 +26,16 @@
 
             <div class="easyap-heading" style="margin: 30px 0 15px 0;">
                 <div class="col">
-                    <a href="#" id="add-script" class="button button-primary"><span class="dashicons dashicons-plus-alt2"></span><?php _e('Add tag', 'easyap'); ?></a>
+                    <a href="#" id="add-script" class="button button-primary"><span class="dashicons dashicons-plus-alt2"></span><?php _e('Add cookies', 'easyap'); ?></a>
                 </div>
                 <div class="col">
                     <a href="#" id="save-tag" class="button button-primary"><span class="dashicons dashicons-saved"></span><?php _e('Salvar', 'easyap'); ?></a>
                 </div>
             </div>
 
-            <div id="scripts-manager">
+            <div id="cookies-manager">
                 <div class="empty-tags">
-                    <p><?php _e('Nunhum script configurado.', 'easyap'); ?></p>
+                    <p><?php _e('Nunhum cookie.', 'easyap'); ?></p>
                 </div>
             </div>
 
@@ -112,46 +112,51 @@
 
             e.preventDefault();
 
-            output = '<div class="easyap-script-tag">';
+            output = '<div class="easyap-cookies-tag">';
 
             output += '<a href="#" class="close">x</a>';
 
             output += '<div class="form-group">';
-            output += '<label>Local</label>';
-            output += '<select name="local[]">';
-            output += '<option value="">---</option>';
-            output += '<option value="after-body-open">Após abertura do body</option>';
-            output += '<option value="before-body-open">Antes de fechar o body</option>';
-            output += '<option value="before-head-close">Antes de fechar o head</option>';
-            output += '</select>';
+            output += '<label>Nome</label>';
+            output += '<input type="text" name="name[]" placeholder="_ga">';
             output += '</div>';
 
             output += '<div class="form-group">';
-            output += '<label>Script</label>';
-            output += '<textarea name="script[]"></textarea>';
+            output += '<label>Domínio</label>';
+            output += '<input type="text" name="domain[]" placeholder="google.com">';
+            output += '</div>';
+
+            output += '<div class="form-group">';
+            output += '<label>Duração</label>';
+            output += '<input type="text" name="duration[]" placeholder="350 dias">';
+            output += '</div>';
+
+            output += '<div class="form-group">';
+            output += '<label>Descrição</label>';
+            output += '<textarea name="description[]" placeholder="Google analytics"></textarea>';
             output += '</div>';
 
             output += '</div>';
 
-            $("#scripts-manager").prepend(output);
+            $("#cookies-manager").prepend(output);
 
             // remove empty alert
-            if ($("#scripts-manager .easyap-script-tag").length > 0) {
-                $('#scripts-manager .empty-tags').hide();
+            if ($("#cookies-manager .easyap-cookies-tag").length > 0) {
+                $('#cookies-manager .empty-tags').hide();
             }
 
         });
 
         // remove script
-        $(document).on('click', '.easyap-script-tag a.close', function(e) {
+        $(document).on('click', '.easyap-cookies-tag a.close', function(e) {
 
             e.preventDefault();
 
-            $(this).parent('.easyap-script-tag').remove();
+            $(this).parent('.easyap-cookies-tag').remove();
 
             // add empty alert
-            if ($("#scripts-manager .easyap-script-tag").length == 0) {
-                $('#scripts-manager .empty-tags').show();
+            if ($("#cookies-manager .easyap-cookies-tag").length == 0) {
+                $('#cookies-manager .empty-tags').show();
             }
 
         });

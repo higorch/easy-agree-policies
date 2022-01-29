@@ -35,10 +35,10 @@ class Easyap_Admin
         if ('toplevel_page_easy-agree-policies' != $page) return;
 
         wp_enqueue_style('wp-color-picker');
-        wp_enqueue_style('easyap-admin', EASYAP_URL . 'assets/css/admin.css', null, '1.0.0');
+        wp_enqueue_style('easyap-admin', EASYAP_URL . 'assets/css/admin.css', null, '1.0.1');
 
         wp_enqueue_script('wp-color-picker-alpha', EASYAP_URL . 'assets/plugins/wp-color-picker-alpha/wp-color-picker-alpha.min.js', array('wp-color-picker'), '1.0.0', true);
-        wp_enqueue_script('easyap-admin', EASYAP_URL . 'assets/js/admin.js', array('jquery'), '1.0.0', true);
+        wp_enqueue_script('easyap-admin', EASYAP_URL . 'assets/js/admin.js', array('jquery'), '1.0.1', true);
     }
 
     public function menu_page()

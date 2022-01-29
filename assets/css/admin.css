@@ -148,8 +148,8 @@
     color: #a53222;
 }
 
-/* easyap-script-tag */
-.easyap-script-tag {
+/* easyap-cookies-tag */
+.easyap-cookies-tag {
     position: relative;
     display: block;
     margin-bottom: 15px;
@@ -159,13 +159,13 @@
     background-color: #ececec;
     border: solid 1px #ddd;
 }
-.easyap-script-tag:last-child {
+.easyap-cookies-tag:last-child {
     margin-bottom: 0;
 }
-.easyap-script-tag textarea {
+.easyap-cookies-tag textarea {
     min-height: 100px;
 }
-.easyap-script-tag a.close {
+.easyap-cookies-tag a.close {
     position: absolute;
     right: 5px;
     top: 5px;
