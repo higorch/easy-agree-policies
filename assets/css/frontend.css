@@ -1,6 +1,6 @@
 .modal-accept > * {
     all: initial;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif !important;
 }
 
 /* modal-accept */
@@ -9,7 +9,7 @@
     bottom: 15px;
     width: 100%;
     max-width: 350px;
-    box-shadow: 0 1px 7px rgba(39, 39, 39, 0.9);
+    box-shadow: 1px 2px 6px rgba(44, 44, 44, 0.75);
     border-radius: 15px;
     z-index: 9999;
 }
@@ -39,8 +39,10 @@
     letter-spacing: 1px;
 }
 .modal-accept .body .box .col.info p {
-    line-height: 16px;
+    font-size: 12px;
     margin: 10px 0 0 0;
+    text-transform: initial;
+    line-height: 16px;
 }
 .modal-accept .body .box .col.info p a {
     text-decoration: none;
