@@ -18,7 +18,7 @@ class Easyap_Request
 
     public function admin_enqueue_scripts()
     {
-        wp_enqueue_script('easyap-admin-http', EASYAP_URL . 'assets/js/admin-request.js', array('jquery'), '1.0.1', true);
+        wp_enqueue_script('easyap-admin-http', EASYAP_URL . 'assets/js/admin-request.js', array('jquery'), '1.0.2', true);
         wp_localize_script('easyap-admin-http', 'easyap_obj', array('ajax_url' => admin_url('admin-ajax.php')));
     }
 
@@ -29,12 +29,12 @@ class Easyap_Request
         $table = $wpdb->prefix . 'easyap_tag_manager';
 
         $id = (int) sanitize_text_field($_POST['id']);
-        $scripts = filter_input(INPUT_POST, 'scripts', FILTER_SANITIZE_SPECIAL_CHARS);
+        $cookies = maybe_serialize(json_decode(stripslashes($_POST['cookies'])));
 
         $data = [
             'title' => sanitize_text_field($_POST['title']),
             'category' => sanitize_text_field($_POST['category']),
-            'tag' => $scripts == '[]' ? null : $scripts,
+            'cookies' => $cookies == '[]' ? null : $cookies,
         ];
 
         $format = array('%s', '%s', '%s');
@@ -86,7 +86,7 @@ class Easyap_Request
         $data['id'] = $tag['id'];
         $data['title'] = $tag['title'];
         $data['category'] = $tag['category'];
-        $data['tags'] = json_decode(html_entity_decode($tag['tag'], ENT_QUOTES, "utf-8"), true);
+        $data['cookies'] = maybe_unserialize($tag['cookies']);
 
         echo json_encode($data, JSON_UNESCAPED_UNICODE);
 

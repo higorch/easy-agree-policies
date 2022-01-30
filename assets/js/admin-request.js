@@ -35,7 +35,7 @@
                 output += '</tbody>';
                 output += '</table>';
 
-                $("#" + category).find('.empty-tags').hide();
+                $("#" + category).find('.empty-alert').hide();
                 $("#" + category).find('.easyap-table').remove();
                 $("#" + category).append(output);
 
@@ -69,14 +69,11 @@
 
         // cookies push
         $('#cookies-manager .easyap-cookies-tag').map(function () {
-
-            var el = $(this);
-
             cookies.push({
-                name: el.find('input[name="name[]"]').val(),
-                domain: el.find('input[name="domain[]"]').val(),
-                duration: el.find('input[name="duration[]"]').val(),
-                description: el.find('textarea[name="description[]"]').val(),
+                name: $(this).find('input[name="name[]"]').val(),
+                domain: $(this).find('input[name="domain[]"]').val(),
+                duration: $(this).find('input[name="duration[]"]').val(),
+                description: $(this).find('textarea[name="description[]"]').val(),
             });
         });
 
@@ -123,38 +120,42 @@
                 $('select[name="category"]').val(data.category);
 
                 $("#cookies-manager .easyap-cookies-tag").remove();
-                $('#cookies-manager .empty-tags').show();
+                $('#cookies-manager .empty-alert').show();
 
-                $.each(data.tags, function (idx, tag) {
+                $.each(data.cookies, function (idx, cookie) {
 
                     output = '<div class="easyap-cookies-tag">';
 
                     output += '<a href="#" class="close">x</a>';
 
                     output += '<div class="form-group">';
-                    output += '<label>Local</label>';
-                    output += '<select name="local[]">';
-                    output += '<option value="">---</option>';
-                    output += '<option ' + (tag.local == 'after-body-open' ? 'selected' : '') + ' value="after-body-open">Após abertura do body</option>';
-                    output += '<option ' + (tag.local == 'before-body-open' ? 'selected' : '') + ' value="before-body-open">Antes de fechar o body</option>';
-                    output += '<option ' + (tag.local == 'before-head-close' ? 'selected' : '') + ' value="before-head-close">Antes de fechar o head</option>';
-                    output += '</select>';
+                    output += '<label>Nome</label>';
+                    output += '<input type="text" name="name[]" placeholder="_ga" value="' + cookie.name + '">';
                     output += '</div>';
 
                     output += '<div class="form-group">';
-                    output += '<label>Script</label>';
-                    output += '<textarea name="script[]">' + tag.tag + '</textarea>';
+                    output += '<label>Domínio</label>';
+                    output += '<input type="text" name="domain[]" placeholder="google.com" value="' + cookie.domain + '">';
+                    output += '</div>';
+
+                    output += '<div class="form-group">';
+                    output += '<label>Duração</label>';
+                    output += '<input type="text" name="duration[]" placeholder="350 dias" value="' + cookie.duration + '">';
+                    output += '</div>';
+
+                    output += '<div class="form-group">';
+                    output += '<label>Descrição</label>';
+                    output += '<textarea name="description[]" placeholder="Google analytics">' + cookie.description + '</textarea>';
                     output += '</div>';
 
                     output += '</div>';
 
                     $("#cookies-manager").prepend(output);
-
                 });
 
                 // remove empty alert
                 if ($("#cookies-manager .easyap-cookies-tag").length > 0) {
-                    $('#cookies-manager .empty-tags').hide();
+                    $('#cookies-manager .empty-alert').hide();
                 }
 
             });

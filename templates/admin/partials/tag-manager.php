@@ -34,7 +34,7 @@
             </div>
 
             <div id="cookies-manager">
-                <div class="empty-tags">
+                <div class="empty-alert">
                     <p><?php _e('Nunhum cookie.', 'easyap'); ?></p>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                     <small><?php _e('Cookies necessários são essenciais para o funcionamento do site, sem eles o site não funcionaria adequadamente. (Ex. acesso a áreas seguras do site, segurança, legislação).', 'easyap'); ?></small>
                 </div>
 
-                <div class="empty-tags">
+                <div class="empty-alert">
                     <p><?php _e('Nunhuma tag configurada.', 'easyap'); ?></p>
                 </div>
 
@@ -66,7 +66,7 @@
                     <small><?php _e('Através dos cookies de marketing, é possível que uma empresa exiba anúncios personalizados para você, com base nos seus interesses.', 'easyap'); ?></small>
                 </div>
 
-                <div class="empty-tags">
+                <div class="empty-alert">
                     <p><?php _e('Nunhuma tag configurada.', 'easyap'); ?></p>
                 </div>
 
@@ -79,7 +79,7 @@
                     <small><?php _e('Cookies de estatísticas, ou analytics traduzem as interações dos visitantes em relatórios detalhados de comportamento, de maneira anonimizada.', 'easyap'); ?></small>
                 </div>
 
-                <div class="empty-tags">
+                <div class="empty-alert">
                     <p><?php _e('Nunhuma tag configurada.', 'easyap'); ?></p>
                 </div>
 
@@ -92,7 +92,7 @@
                     <small><?php _e('Cookies funcionais ajustam o site a serviços de terceiros como vinculo ao seu perfil em redes sociais, comentários, chatbots, etc.', 'easyap'); ?></small>
                 </div>
 
-                <div class="empty-tags">
+                <div class="empty-alert">
                     <p><?php _e('Nunhuma tag configurada.', 'easyap'); ?></p>
                 </div>
 
@@ -142,7 +142,7 @@
 
             // remove empty alert
             if ($("#cookies-manager .easyap-cookies-tag").length > 0) {
-                $('#cookies-manager .empty-tags').hide();
+                $('#cookies-manager .empty-alert').hide();
             }
 
         });
@@ -156,7 +156,7 @@
 
             // add empty alert
             if ($("#cookies-manager .easyap-cookies-tag").length == 0) {
-                $('#cookies-manager .empty-tags').show();
+                $('#cookies-manager .empty-alert').show();
             }
 
         });
