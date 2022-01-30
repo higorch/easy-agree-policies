@@ -21,15 +21,19 @@ $body = get_option_easyap('easyap_geral', 'modal_consent_info', null, 'Este site
 
 </div>
 
+<?php
+if (is_file(EASYAP_PATH . 'templates/frontend/modal-cookies.php'))
+    require_once EASYAP_PATH . 'templates/frontend/modal-cookies.php';
+?>
 
 <?php
 // modal consent horizontal position
 $modal_consent_horizontal_position = get_option_easyap('easyap_styles', 'modal_consent_position_horizontal', null, 'left');
 
-if($modal_consent_horizontal_position == 'left') {
+if ($modal_consent_horizontal_position == 'left') {
     echo "<style> .modal-accept { left: 15px; } </style>";
 }
-if($modal_consent_horizontal_position == 'right') {
+if ($modal_consent_horizontal_position == 'right') {
     echo "<style> .modal-accept { right: 15px; } </style>";
 }
 ?>
@@ -38,16 +42,20 @@ if($modal_consent_horizontal_position == 'right') {
     .modal-accept {
         background-color: <?php echo get_option_easyap('easyap_styles', 'modal_consent_bg_color', null, 'rgb(19, 41, 61)'); ?>;
     }
+
     .modal-accept .body .box .col.info {
         color: <?php echo get_option_easyap('easyap_styles', 'modal_consent_text_color', null, 'rgb(232, 241, 242)'); ?>;
     }
+
     .modal-accept .body .box .col.info a {
         color: <?php echo get_option_easyap('easyap_styles', 'modal_consent_link_color', null, 'rgb(27, 152, 224)'); ?>;
     }
+
     .modal-accept .body .box .col.btn button.options {
         background-color: <?php echo get_option_easyap('easyap_styles', 'modal_consent_btn_options_details_bg_color', null, 'rgb(232, 241, 242)'); ?>;
         color: <?php echo get_option_easyap('easyap_styles', 'modal_consent_btn_options_details_text_color', null, 'rgb(36, 123, 160)'); ?>;
     }
+
     .modal-accept .body .box .col.btn button.accept {
         background-color: <?php echo get_option_easyap('easyap_styles', 'modal_consent_btn_aceept_bg_color', null, 'rgb(36, 123, 160)'); ?>;
         color: <?php echo get_option_easyap('easyap_styles', 'modal_consent_btn_aceept_text_color', null, 'rgb(232, 241, 242)'); ?>;
