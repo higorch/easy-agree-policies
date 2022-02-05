@@ -30,13 +30,10 @@
 }
 .modal-accept .body .box .col.info strong {
     font-size: .85em;
+    margin: 0;
 }
 .modal-accept .body .box .col.info p {
     font-size: .85em;
-}
-.modal-accept .body .box .col.info strong {
-    margin: 0;
-    letter-spacing: 1px;
 }
 .modal-accept .body .box .col.info p {
     font-size: 12px;
@@ -90,8 +87,8 @@
     visibility: hidden;
     opacity: 0;
 
-    transition: opacity .15s linear;
-    -webkit-transition: opacity .15s linear;
+    transition: opacity .15s linear, visibility .15s ease;
+    -webkit-transition: opacity .15s linear, visibility .15s ease;
 }
 .modal-cookies.active {
     visibility: visible;
@@ -136,15 +133,21 @@
     flex-shrink: 0;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 1rem;
+    padding: 15px;
     border-bottom: 1px solid #dee2e6;
     border-top-left-radius: calc(.3rem - 1px);
     border-top-right-radius: calc(.3rem - 1px);
 }
+.modal-cookies .dialog .content .header span.title {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #363955;
+}
 .modal-cookies .dialog .content .body {
     position: relative;
     flex: 1 1 auto;
-    padding: 1rem;
+    padding: 15px;
     overflow-y: auto;
 }
 .modal-cookies .dialog .content .footer {
@@ -153,8 +156,78 @@
     flex-shrink: 0;
     align-items: center;
     justify-content: flex-end;
-    padding: .75rem;
+    padding: 15px;
     border-top: 1px solid #dee2e6;
     border-bottom-right-radius: calc(.3rem - 1px);
     border-bottom-left-radius: calc(.3rem - 1px);
+}
+
+/* btn actions */
+.modal-cookies .dialog .content .footer .actions {
+    display: block;
+    font-size: 0;
+}
+.modal-cookies .dialog .content .footer .actions a.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.modal-cookies .dialog .content .footer .actions a.btn[data-consent="accept-all"] {
+    background-color: #363955;
+    color: #e8f1f2;
+}
+.modal-cookies .dialog .content .footer .actions a.btn[data-consent="save-options"] {
+    background-color: #fff;
+    border: solid 1px #247ba0;
+    color: #247ba0;
+    margin-left: 15px;
+}
+
+/* categories */
+.modal-cookies .dialog .content .body .categories,
+.modal-cookies .dialog .content .body .categories .item,
+.modal-cookies .dialog .content .body .categories .item .box {
+    display: block;
+    width: 100%;
+}
+.modal-cookies .dialog .content .body .categories .item .box {
+    font-size: 0;
+    border-bottom: solid 1px #eee;
+    padding: 15px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.modal-cookies .dialog .content .body .categories .item:last-child .box {
+    border-bottom: none;
+}
+.modal-cookies .dialog .content .body .categories .item .box small.desc {
+    display: block;
+    font-size: 12px;
+    line-height: 15px;
+    padding: 8px;
+    margin: 10px 0 0 0;
+    background: #faf9f9;
+    border-left: solid 3px #60658a;
+    border-radius: 3px;
+    color: #60658a;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.modal-cookies .dialog .content .body .categories .item .box .title,
+.modal-cookies .dialog .content .body .categories .item .box .actions {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: initial;
+}
+.modal-cookies .dialog .content .body .categories .item .box .title {
+    width: calc(100% - 200px);
+    font-size: 14px;
+    font-weight: 600;
+    color: #60658a;
+}
+.modal-cookies .dialog .content .body .categories .item .box .actions {
+    width: 200px;
+    text-align: right;
 }
