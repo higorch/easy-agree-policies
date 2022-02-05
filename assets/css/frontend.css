@@ -47,27 +47,27 @@
 .modal-accept .body .box .col.btn {
     padding-top: 0;
 }
-.modal-accept .body .box .col.btn button {
-    appearance: unset;
-    -webkit-appearance: unset;
-    font-family: Arial, Helvetica, sans-serif;
-    letter-spacing: 1px;
-    border: none;
+.modal-accept .body .box .col.btn a {
+    display: inline-block;
+    vertical-align: middle;
     border-radius: 30px;
     font-size: .65em;
     font-weight: bold;
+    letter-spacing: 1px;
     text-transform: uppercase;
     text-decoration: none;
     cursor: pointer;
+    outline: 0;
+    text-decoration: none;
     padding: 10px 30px;
 
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
 }
-.modal-accept .body .box .col.btn button.options {
+.modal-accept .body .box .col.btn a.options {
     margin-right: 5px;
 }
-.modal-accept .body .box .col.btn button.accept {
+.modal-accept .body .box .col.btn a.accept {
     margin-left: 5px;
 }
 
@@ -176,6 +176,7 @@
     border-radius: 5px;
     outline: none;
     text-decoration: none;
+    letter-spacing: 1px;
 }
 .modal-cookies .dialog .content .footer .actions a.btn[data-consent="accept-all"] {
     background-color: #363955;

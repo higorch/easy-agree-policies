@@ -1,7 +1,10 @@
 (function ($) {
 
     // open modal 
-    $('.modal-accept .body .box .col.btn button.options').on('click', function () {
+    $('.modal-accept .body .box .col.btn a.options').on('click', function (e) {
+
+        e.preventDefault();
+
         $('.modal-cookies').addClass('active');
         $("body").css("overflow", "hidden");
     });
