@@ -10,7 +10,7 @@
     width: 100%;
     max-width: 350px;
     box-shadow: 1px 2px 6px rgba(44, 44, 44, 0.75);
-    border-radius: 15px;
+    border-radius: .3rem;
     z-index: 9999;
 }
 .modal-accept .body .box  {
@@ -237,4 +237,17 @@
 .modal-cookies .dialog .content .body .categories .item .box .actions {
     width: 200px;
     text-align: right;
+}
+
+@media (max-width: 768px) { 
+
+    .modal-accept {
+        max-width: initial;
+        width: auto;
+        left: 15px;
+        right: 15px;
+    }
+    .modal-cookies .dialog {
+        width: calc(100% - 30px);
+    }
 }

@@ -21,4 +21,17 @@
 
     });
 
+    // save consent
+    $('.modal-accept .body .box .col.btn a, .modal-cookies .dialog .content .footer .actions a.btn').on('click', function (e) {
+
+        e.preventDefault();
+
+        var el = $(this);
+
+        if (typeof el.data('consent') !== 'undefined') {
+            console.log(el.data('consent'));
+        }
+
+    });
+
 })(jQuery);
