@@ -173,6 +173,9 @@
     font-size: 12px;
     font-weight: bold;
     text-transform: uppercase;
+    border-radius: 5px;
+    outline: none;
+    text-decoration: none;
 }
 .modal-cookies .dialog .content .footer .actions a.btn[data-consent="accept-all"] {
     background-color: #363955;
@@ -195,9 +198,12 @@
 .modal-cookies .dialog .content .body .categories .item .box {
     font-size: 0;
     border-bottom: solid 1px #eee;
-    padding: 15px;
+    padding: 15px 0;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
+}
+.modal-cookies .dialog .content .body .categories .item:first-child .box {
+    padding-top: 0;
 }
 .modal-cookies .dialog .content .body .categories .item:last-child .box {
     border-bottom: none;
@@ -223,7 +229,7 @@
 }
 .modal-cookies .dialog .content .body .categories .item .box .title {
     width: calc(100% - 200px);
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
     color: #60658a;
 }
