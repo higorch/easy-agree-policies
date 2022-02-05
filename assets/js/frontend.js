@@ -73,6 +73,9 @@
             }
 
             setCookie('easyap_consents', JSON.stringify(consents));
+
+            $('.modal-accept, .modal-cookies').removeClass('active');
+            $("body").css("overflow", "initial");
         }
     });
 

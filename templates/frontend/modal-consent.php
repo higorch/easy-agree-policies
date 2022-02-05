@@ -32,10 +32,10 @@ $modal_consent_h_position = get_option_easyap('easyap_styles', 'modal_consent_po
 
 switch ($modal_consent_h_position) {
     case 'left':
-        echo "<style> .modal-accept { left: 15px; } </style>";
+        echo "<style>.modal-accept.active { left: 15px; } </style>";
         break;
     case 'right':
-        echo "<style> .modal-accept { right: 15px; } </style>";
+        echo "<style>.modal-accept.active { right: 15px; } </style>";
         break;
 }
 ?>
