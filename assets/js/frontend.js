@@ -23,13 +23,26 @@
     // verify exist cookie
     var hasCookie = function (cookieName) {
         var cookieName = getCookie(cookieName);
-        if (cookieName != "")
+        if (cookieName !== null)
             return true;
         return false;
     }
 
+    // active or deactive modal consent
+    var displayModalConsent = function () {
+        setTimeout(function () {
+            if (hasCookie('easyap_consents')) {
+                $('.modal-consent').removeClass('active');
+            } else {
+                $('.modal-consent').addClass('active');
+            }
+        }, 3000);
+    }
+
+    displayModalConsent();
+
     // open modal 
-    $('.modal-accept .body .box .col.btn a.options').on('click', function (e) {
+    $('.modal-consent .body .box .col.btn a.options').on('click', function (e) {
         e.preventDefault();
         $('.modal-cookies').addClass('active');
         $("body").css("overflow", "hidden");
@@ -45,7 +58,7 @@
     });
 
     // save cookie easyap_consents
-    $('.modal-accept .body .box .col.btn a, .modal-cookies .dialog .content .footer .actions a.btn').on('click', function (e) {
+    $('.modal-consent .body .box .col.btn a, .modal-cookies .dialog .content .footer .actions a.btn').on('click', function (e) {
 
         e.preventDefault();
 
@@ -74,7 +87,7 @@
 
             setCookie('easyap_consents', JSON.stringify(consents));
 
-            $('.modal-accept, .modal-cookies').removeClass('active');
+            $('.modal-consent, .modal-cookies').removeClass('active');
             $("body").css("overflow", "initial");
         }
     });

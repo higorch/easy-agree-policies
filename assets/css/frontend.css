@@ -1,10 +1,10 @@
-.modal-accept > * {
+.modal-consent > * {
     all: initial;
     font-family: Arial, Helvetica, sans-serif !important;
 }
 
-/* modal-accept */
-.modal-accept {
+/* modal-consent */
+.modal-consent {
     position: fixed;
     bottom: 15px;
     width: 100%;
@@ -20,16 +20,16 @@
     transition: all ease .3s;
     -webkit-transition: all ease .3s;
 }
-.modal-accept.active {
+.modal-consent.active {
     opacity: 1;
     transform: scale(1);
     -webkit-transform: scale(1);
 }
-.modal-accept .body .box  {
+.modal-consent .body .box  {
     display: block;
     font-size: 0;
 }
-.modal-accept .body .box .col {
+.modal-consent .body .box .col {
     font-size: initial;
     display: inline-block;
     width: 100%;
@@ -40,26 +40,26 @@
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
 }
-.modal-accept .body .box .col.info strong {
+.modal-consent .body .box .col.info strong {
     font-size: .85em;
     margin: 0;
 }
-.modal-accept .body .box .col.info p {
+.modal-consent .body .box .col.info p {
     font-size: .85em;
 }
-.modal-accept .body .box .col.info p {
+.modal-consent .body .box .col.info p {
     font-size: 12px;
     margin: 10px 0 0 0;
     text-transform: initial;
     line-height: 16px;
 }
-.modal-accept .body .box .col.info p a {
+.modal-consent .body .box .col.info p a {
     text-decoration: none;
 }
-.modal-accept .body .box .col.btn {
+.modal-consent .body .box .col.btn {
     padding-top: 0;
 }
-.modal-accept .body .box .col.btn a {
+.modal-consent .body .box .col.btn a {
     display: inline-block;
     vertical-align: middle;
     border-radius: 30px;
@@ -76,10 +76,10 @@
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
 }
-.modal-accept .body .box .col.btn a.options {
+.modal-consent .body .box .col.btn a.options {
     margin-right: 5px;
 }
-.modal-accept .body .box .col.btn a.accept {
+.modal-consent .body .box .col.btn a.accept {
     margin-left: 5px;
 }
 
@@ -253,7 +253,7 @@
 
 @media (max-width: 768px) { 
 
-    .modal-accept {
+    .modal-consent {
         max-width: initial;
         width: auto;
         left: 15px;
