@@ -17,7 +17,7 @@
                             <div class="title">Necessários</div>
                             <div class="actions">
                                 <label>
-                                    <input type="checkbox" name="consent[]" value="required">
+                                    <input type="checkbox" name="consent[]" value="required" checked disabled>
                                 </label>
                             </div>
                             <small class="desc">Cookies necessários são essenciais para o funcionamento do site, sem eles o site não funcionaria adequadamente. (Ex. acesso a áreas seguras do site, segurança, legislação).</small>

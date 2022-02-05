@@ -2,7 +2,7 @@
 $title = get_option_easyap('easyap_geral', 'modal_consent_title', null, 'Politica & Privacidade');
 $body = get_option_easyap('easyap_geral', 'modal_consent_info', null, 'Este site usa cookies para melhorar sua experiência. Ao continuar navegando você concorda com o uso dos cookies, termos e políticas do site.');
 ?>
-<div class="modal-accept">
+<div class="modal-accept active">
 
     <div class="body">
 
