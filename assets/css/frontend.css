@@ -140,12 +140,18 @@
     border-radius: .3rem;
     outline: 0;
 }
+.modal-cookies .dialog .content .header,
+.modal-cookies .dialog .content .body,
+.modal-cookies .dialog .content .footer {
+    background-color: #fff;
+    margin: 0;
+    padding: 15px;
+}
 .modal-cookies .dialog .content .header {
     display: flex;
     flex-shrink: 0;
     align-items: center;
     justify-content: space-between;
-    padding: 15px;
     border-bottom: 1px solid #dee2e6;
     border-top-left-radius: calc(.3rem - 1px);
     border-top-right-radius: calc(.3rem - 1px);
@@ -159,7 +165,6 @@
 .modal-cookies .dialog .content .body {
     position: relative;
     flex: 1 1 auto;
-    padding: 15px;
     overflow-y: auto;
 }
 .modal-cookies .dialog .content .footer {
@@ -168,7 +173,6 @@
     flex-shrink: 0;
     align-items: center;
     justify-content: flex-end;
-    padding: 15px;
     border-top: 1px solid #dee2e6;
     border-bottom-right-radius: calc(.3rem - 1px);
     border-bottom-left-radius: calc(.3rem - 1px);
