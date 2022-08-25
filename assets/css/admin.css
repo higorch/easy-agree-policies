@@ -1,0 +1,209 @@
+/* tags */
+.wrap-easyap-tags {
+    display: block;
+    width: 100%;
+}
+.wrap-easyap-tags .box {
+    display: block;
+    width: calc(100% + 30px);
+    margin-left: -15px;
+    font-size: 0;
+}
+.wrap-easyap-tags .box .col {
+    display: inline-block;
+    vertical-align: top;
+    font-size: initial;
+    padding: 15px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.wrap-easyap-tags .box .col.entry {
+    width: 40%;
+}
+.wrap-easyap-tags .box .col.list {
+    width: 60%;
+}
+.wrap-easyap-tags .form-group {
+    display: block;
+    margin-bottom: 15px;
+}
+.wrap-easyap-tags .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: .9em;
+    font-weight: 700;
+}
+.wrap-easyap-tags .form-group input[type="text"], 
+.wrap-easyap-tags .form-group input[type="email"], 
+.wrap-easyap-tags .form-group select, 
+.wrap-easyap-tags .form-group textarea {
+    display: block;
+    width: 100%;
+    max-width: initial;
+}
+
+/* easyap-heading */
+.easyap-heading {
+    display: block;
+    width: 100%;
+    font-size: 0;
+}
+.easyap-heading .col {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: initial;
+    width: 50%;
+    padding: 0 !important;
+}
+.easyap-heading .col:nth-child(2) {
+    text-align: right;
+}
+.easyap-heading span.title {
+    color: #1d2327;
+    font-weight: 600;
+}
+.easyap-heading .col .button .dashicons {
+    line-height: 28px;
+}
+
+/* wrap-table */
+.wrap-table, .wrap-table .heading {
+    display: block;
+}
+.wrap-table {
+    margin-bottom: 30px;
+}
+.wrap-table:last-child {
+    margin-bottom: 0;
+}
+.wrap-table .heading {
+    margin-bottom: 15px;
+}
+.wrap-table .heading b, .wrap-table .heading small {
+    display: block;
+    font-size: .9em;
+}
+.wrap-table .heading b {
+    margin-bottom: 10px;
+}
+.wrap-table .heading small {
+    font-size: 0.75em;
+    line-height: 16px;
+    text-align: justify;
+    padding-left: 5px;
+    background: #f2f2f2;
+    border-left: solid 3px #ddd;
+    color: #757575;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+/* easyap-table  */
+.easyap-table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+.easyap-table tr:nth-child(odd) {
+    background: #fff;
+}
+.easyap-table tr:nth-child(even) {
+    background: #eee;
+}
+.easyap-table td, .easyap-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: .85em;
+}
+.easyap-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.easyap-table tr:hover {
+    background-color: #ddd;
+}
+.easyap-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #3c434a;
+    color: white;
+}
+.easyap-table .text-center {
+    text-align: center;
+}
+.easyap-table .actions {
+    width: 100px;
+}
+.easyap-table .actions a {
+    margin-left: 10px;
+    text-decoration: none;
+}
+.easyap-table .actions a .dashicons {
+    font-size: 1em;
+}
+.easyap-table .actions a:first-child {
+    margin-left: 0;
+}
+.easyap-table .actions a.remove {
+    color: #a53222;
+}
+
+/* easyap-cookies-tag */
+.easyap-cookies-tag {
+    position: relative;
+    display: block;
+    margin-bottom: 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-color: #ececec;
+    border: solid 1px #ddd;
+}
+.easyap-cookies-tag:last-child {
+    margin-bottom: 0;
+}
+.easyap-cookies-tag textarea {
+    min-height: 100px;
+}
+.easyap-cookies-tag a.close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    line-height: 14px;
+    background-color: #a53222;
+    color: #fff;
+    border-radius: 3px;
+    text-align: center;
+    font-size: .7em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* empty-alert */
+.empty-alert {
+    text-align: center;
+    display: block;
+    width: 100%;
+    background: #ececec;
+    color: #757575;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.empty-alert p {
+    padding: 0;
+    margin: 0;
+}
+
+#info-category {
+    font-size: 0.85em;
+    margin-top: 5px;
+    line-height: 16px;
+    text-align: justify;
+}
+
+.mb-0 {margin-bottom: 0 !important;}
+.mt-0 {margin-top: 0 !important;}
+.ml-0 {margin-left: 0 !important;}
+.mr-0 {margin-right: 0 !important;}
