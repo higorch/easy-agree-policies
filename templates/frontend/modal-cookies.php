@@ -4,11 +4,11 @@
 
         <div class="content">
 
-            <div class="header">
+            <div class="easyap-header">
                 <span class="title">Opções de cookies, conceda sua permissão!</span>
             </div>
 
-            <div class="body">
+            <div class="easyap-body">
 
                 <div class="categories">
 
@@ -64,7 +64,7 @@
 
             </div>
 
-            <div class="footer">
+            <div class="easyap-footer">
 
                 <div class="actions">
                     <a href="#" class="btn" data-consent="accept-all">Aceitar todos</a>

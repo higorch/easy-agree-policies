@@ -1,4 +1,5 @@
-.modal-consent > * {
+.modal-consent > *,
+.modal-cookies > * {
     all: initial;
     font-family: Arial, Helvetica, sans-serif !important;
 }
@@ -140,14 +141,14 @@
     border-radius: .3rem;
     outline: 0;
 }
-.modal-cookies .dialog .content .header,
-.modal-cookies .dialog .content .body,
-.modal-cookies .dialog .content .footer {
+.modal-cookies .dialog .content .easyap-header,
+.modal-cookies .dialog .content .easyap-body,
+.modal-cookies .dialog .content .easyap-footer {
     background-color: #fff;
     margin: 0;
     padding: 15px;
 }
-.modal-cookies .dialog .content .header {
+.modal-cookies .dialog .content .easyap-header {
     display: flex;
     flex-shrink: 0;
     align-items: center;
@@ -156,18 +157,18 @@
     border-top-left-radius: calc(.3rem - 1px);
     border-top-right-radius: calc(.3rem - 1px);
 }
-.modal-cookies .dialog .content .header span.title {
+.modal-cookies .dialog .content .easyap-header span.title {
     display: block;
     font-size: 18px;
     font-weight: bold;
     color: #363955;
 }
-.modal-cookies .dialog .content .body {
+.modal-cookies .dialog .content .easyap-body {
     position: relative;
     flex: 1 1 auto;
     overflow-y: auto;
 }
-.modal-cookies .dialog .content .footer {
+.modal-cookies .dialog .content .easyap-footer {
     display: flex;
     flex-wrap: wrap;
     flex-shrink: 0;
@@ -179,11 +180,11 @@
 }
 
 /* btn actions */
-.modal-cookies .dialog .content .footer .actions {
+.modal-cookies .dialog .content .easyap-footer .actions {
     display: block;
     font-size: 0;
 }
-.modal-cookies .dialog .content .footer .actions a.btn {
+.modal-cookies .dialog .content .easyap-footer .actions a.btn {
     display: inline-block;
     padding: 10px 20px;
     font-size: 12px;
@@ -194,11 +195,11 @@
     text-decoration: none;
     letter-spacing: 1px;
 }
-.modal-cookies .dialog .content .footer .actions a.btn[data-consent="accept-all"] {
+.modal-cookies .dialog .content .easyap-footer .actions a.btn[data-consent="accept-all"] {
     background-color: #363955;
     color: #e8f1f2;
 }
-.modal-cookies .dialog .content .footer .actions a.btn[data-consent="save-options"] {
+.modal-cookies .dialog .content .easyap-footer .actions a.btn[data-consent="save-options"] {
     background-color: #fff;
     border: solid 1px #247ba0;
     color: #247ba0;
@@ -206,26 +207,26 @@
 }
 
 /* categories */
-.modal-cookies .dialog .content .body .categories,
-.modal-cookies .dialog .content .body .categories .item,
-.modal-cookies .dialog .content .body .categories .item .box {
+.modal-cookies .dialog .content .easyap-body .categories,
+.modal-cookies .dialog .content .easyap-body .categories .item,
+.modal-cookies .dialog .content .easyap-body .categories .item .box {
     display: block;
     width: 100%;
 }
-.modal-cookies .dialog .content .body .categories .item .box {
+.modal-cookies .dialog .content .easyap-body .categories .item .box {
     font-size: 0;
     border-bottom: solid 1px #eee;
     padding: 15px 0;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
 }
-.modal-cookies .dialog .content .body .categories .item:first-child .box {
+.modal-cookies .dialog .content .easyap-body .categories .item:first-child .box {
     padding-top: 0;
 }
-.modal-cookies .dialog .content .body .categories .item:last-child .box {
+.modal-cookies .dialog .content .easyap-body .categories .item:last-child .box {
     border-bottom: none;
 }
-.modal-cookies .dialog .content .body .categories .item .box small.desc {
+.modal-cookies .dialog .content .easyap-body .categories .item .box small.desc {
     display: block;
     font-size: 12px;
     line-height: 15px;
@@ -238,19 +239,19 @@
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
 }
-.modal-cookies .dialog .content .body .categories .item .box .title,
-.modal-cookies .dialog .content .body .categories .item .box .actions {
+.modal-cookies .dialog .content .easyap-body .categories .item .box .title,
+.modal-cookies .dialog .content .easyap-body .categories .item .box .actions {
     display: inline-block;
     vertical-align: middle;
     font-size: initial;
 }
-.modal-cookies .dialog .content .body .categories .item .box .title {
+.modal-cookies .dialog .content .easyap-body .categories .item .box .title {
     width: calc(100% - 200px);
     font-size: 15px;
     font-weight: 600;
     color: #60658a;
 }
-.modal-cookies .dialog .content .body .categories .item .box .actions {
+.modal-cookies .dialog .content .easyap-body .categories .item .box .actions {
     width: 200px;
     text-align: right;
 }

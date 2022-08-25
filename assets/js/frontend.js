@@ -58,7 +58,7 @@
     });
 
     // save cookie easyap_consents
-    $('.modal-consent .body .box .col.btn a, .modal-cookies .dialog .content .footer .actions a.btn').on('click', function (e) {
+    $('.modal-consent .body .box .col.btn a, .modal-cookies .dialog .content .easyap-footer .actions a.btn').on('click', function (e) {
 
         e.preventDefault();
 

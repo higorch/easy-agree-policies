@@ -14,8 +14,8 @@ class Easyap_Frontend
 
     public function enqueue_scripts()
     {
-        wp_enqueue_style('easyap-frontend', EASYAP_URL . '/assets/css/frontend.css', null, '2.0.2');
-        wp_enqueue_script('easyap-frontend', EASYAP_URL . '/assets/js/frontend.js', array('jquery'), '2.0.2', true);
+        wp_enqueue_style('easyap-frontend', EASYAP_URL . '/assets/css/frontend.css', null, '1.0.0');
+        wp_enqueue_script('easyap-frontend', EASYAP_URL . '/assets/js/frontend.js', array('jquery'), '1.0.0', true);
     }
 
     public function frontend()
