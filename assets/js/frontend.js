@@ -92,6 +92,4 @@
         }
     });
 
-    console.log(JSON.parse(getCookie('easyap_consents')));
-
 })(jQuery);

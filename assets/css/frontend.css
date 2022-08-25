@@ -1,7 +1,7 @@
 .modal-consent > *,
 .modal-cookies > * {
-    all: initial;
     font-family: Arial, Helvetica, sans-serif !important;
+    outline: none;
 }
 
 /* modal-consent */
@@ -70,7 +70,6 @@
     text-transform: uppercase;
     text-decoration: none;
     cursor: pointer;
-    outline: 0;
     text-decoration: none;
     padding: 10px 30px;
 
@@ -94,7 +93,6 @@
     background-color: rgba(0, 0, 0, .75);
     overflow-x: hidden;
     overflow-y: auto;
-    outline: 0;
     z-index: 9999;
 
     visibility: hidden;
@@ -111,8 +109,8 @@
     position: relative;
     display: flex;
     align-items: center;
-    width: auto;
-    max-width: 720px;
+    width: 100%;
+    max-width: 680px;
     height: calc(100% - 3.5rem);
     min-height: calc(100% - 3.5rem);
     margin: 1.75rem auto;
@@ -139,7 +137,6 @@
     background-clip: padding-box;
     border: 1px solid rgba(0,0,0,.2);
     border-radius: .3rem;
-    outline: 0;
 }
 .modal-cookies .dialog .content .easyap-header,
 .modal-cookies .dialog .content .easyap-body,
@@ -191,7 +188,6 @@
     font-weight: bold;
     text-transform: uppercase;
     border-radius: 5px;
-    outline: none;
     text-decoration: none;
     letter-spacing: 1px;
 }
